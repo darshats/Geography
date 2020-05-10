@@ -1,0 +1,2628 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    76.7961247,
+                    29.9655963
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Thanesar",
+                "name-aka": "Kuruksetra",
+                "period": "-1600:",
+                "river": "Saraswati",
+                "texts": "Panini,Astadhyayi,Mahabharata,Yoginitantra    ",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n115/mode/2up",
+                "todo": "Start date of this city",
+                "visible": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    76.5663599,
+                    29.9811231
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Pehowa",
+                "river": "Saraswati",
+                "period": "-1600:",
+                "todo": "Start date of this city",
+                "visible": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    76.09253,
+                    29.9107762
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Shatrana",
+                "river-segment": "Ghaggar",
+                "visible": false,
+                "info": "Ghaggar bed widens suddently to 6-8km here. Probably old branch of Sutlej met Ghaggar system here"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    75.5464125,
+                    29.5490809
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "site",
+                "name": "Bhirrana",
+                "period": ":-2600",
+                "river ": "Saraswati",
+                "site": "IVC",
+                "visible": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    75.6589131,
+                    29.620901
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "site",
+                "name": "Kunal",
+                "river": "Saraswati",
+                "site": "IVC",
+                "period": ":-2600",
+                "todo": "Start date of this city",
+                "visible": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.1275668,
+                    29.4710705
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "site",
+                "name": "Kalibangan",
+                "river": "Saraswati",
+                "site": "IVC",
+                "visible": true
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+              "stroke": "#05eaff",
+              "stroke-width": 4,
+              "stroke-opacity": 1,
+              "type": "river",
+              "name": "Sutlej feeder 1, Early Harappan",
+              "period": ":-2500",
+              "map-notes" :"pg 98, 285 The Lost River, and paper on Sutlej glacial flow till -2500. Early date as per Kenoyer."
+            },
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  76.51153564453125,
+                  30.984673330708464
+                ],
+                [
+                  76.4483642578125,
+                  30.313616689930676
+                ],
+                [
+                  76.41815185546875,
+                  30.140376821599734
+                ],
+                [
+                  76.101294,
+                  29.9107399
+                ]
+              ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": 
+            {
+              "stroke": "#05eaff",
+              "stroke-width": 3,
+              "stroke-opacity": 1,
+              "type": "river",
+              "name": "Markand",
+              "map-notes": "pg 58,285 The Lost River. Markand received part of head waters of Yamuna earlier",
+              "period": ":-2500",
+              "period-key":"0002",
+              "todo": "reduce stroke width after -2500."
+            },
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                    76.56234741210938,
+                    29.99657038669949
+                ],
+                [
+                    76.87408447265625,
+                    30.173624550358536
+                ],
+                [
+                    77.1240234375,
+                    30.315987718557867
+                ],
+                [
+                    77.18032836914062,
+                    30.47589937936957
+                ],
+                [
+                    77.29019165039062,
+                    30.53387657299763
+                ],
+                [
+                    77.596435546875,
+                    30.465246750753185
+                ]
+              ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#05eaff",
+                "stroke-width": 4,
+                "stroke-opacity": 1,
+                "type": "river",
+                "name": "Saraswati",
+                "period": ":-2500",
+                "period-key": "0001",
+                "info": "Course of ancient Saraswati river, as recreated from multiple documents, but primarily the excellent book by Michel Danino: The Lost River - On the trail of the SARASVATI. The course shows the Ghagghar joining Sarsuti near Rasulpur. This combined stream joins Chautang aka Drishdavati near Hanumangarh and flows into Pakistan beyond Anupgarh. In the past, a tributary of Sutlej (not shown) would have also met the upper arm which likely resulted in the snow-fed year round river that was described in the Vedas. TODO - update course with time",
+                "info-link": "https://www.amazon.in/Lost-River-Michel-Danino/dp/0143068644/ref=sr_1_1?dchild=1&keywords=michel+danino+lost+river&qid=1587889606&sr=8-1"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        76.31240844726562,
+                        29.915661925840578
+                    ],
+                    [
+                        76.101294,
+                        29.9107399
+                    ],
+                    [
+                        75.00091552734375,
+                        29.532839863453397
+                    ],
+                    [
+                        74.28749084472655,
+                        29.620922658778593
+                    ],
+                    [
+                        73.90125274658203,
+                        29.32262483904707
+                    ],
+                    [
+                        73.6626751,
+                        29.3350747
+                    ],
+                    [
+                        73.3619713,
+                        29.1627071
+                    ],
+                    [
+                        73.184925,
+                        29.2041397
+                    ],
+                    [
+                        72.872444,
+                        29.209217
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    77.0348561,
+                    30.8848331
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "river": "Ghaggar",
+                "river-origin": "yes",
+                "type": "place",
+                "name": "Dagshai",
+                "visible": false
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#05eaff",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "type": "river",
+                "name": "Sarsuti",
+                "reference": "[pg 19,48 The Lost River]",
+                "map-notes": "Rise in Sirmur hills, touches plains near AdBadri, joins Ghaggar near Rasula - halfway between Kaithal and Shatrana"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        77.33963012695312,
+                        30.461695615612108
+                    ],
+                    [
+                        76.79718017578125,
+                        29.97753902660092
+                    ],
+                    [
+                        76.56234741210938,
+                        29.99657038669949
+                    ],
+                    [
+                        76.31240844726562,
+                        29.915661925840578
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#05eaff",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "type": "river",
+                "name": "Ghaggar",
+                "map-notes": "Rise near Dagshai, touches plains near Pinjore, flows past north of Ambala. Receives Sarsuti near Rasula. The channel suddenly becomes 6-8km wide near Shatrana, presumably spot where Vedic-Sutlej channel met this river system."
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        77.0361328125,
+                        30.8951543714447
+                    ],
+                    [
+                        76.90155029296875,
+                        30.796114909344855
+                    ],
+                    [
+                        76.61865234374999,
+                        30.21398171687066
+                    ],
+                    [
+                        76.31240844726562,
+                        29.915661925840578
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    77.2262276,
+                    28.6095791
+                ]
+            },
+            "properties": {
+                "marker-color": "#0e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Indraprastha",
+                "name-aka": "Indrapatta,Brhatsthala",
+                "persons": "Pandus,Yudhisthira,Pandavas",
+                "capital": "Kuru",
+                "visible": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    78.0061134,
+                    29.1586138
+                ]
+            },
+            "properties": {
+                "marker-color": "#0e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Hastinapur",
+                "capital": "Kuru",
+                "name-aka": "Gajavayah",
+                "persons": "Kauravas,Drtarastra,Pariksit,Nicaksu,Hasti,Ajamidha,Dvimidha",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n95/mode/2up",
+                "visible": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    79.1347102,
+                    28.3727998
+                ]
+            },
+            "properties": {
+                "marker-color": "#0e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Ahicchatra",
+                "name-aka": "Ahikshetra,Adhicchatra,Adisadra,Chatravati,Samkhyavati",
+                "capital": "northern Pancala",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n77/mode/2up",
+                "visible": true,
+                "texts": "Mahabhashya,Patanjali",
+                "persons": "Arjuna,Drona,Bahasatimitra,Saunakayani,Acyuta,Hieun Tsang,Parsvanatha",
+                "info": "Luders' List"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Suratgarh",
+                "river": "Saraswati",
+                "visible": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    73.90125274658203,
+                    29.32262483904707
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Hanumangarh",
+                "river": "Saraswati",
+                "visible": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.28749084472655,
+                    29.620922658778593
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#05eaff",
+                "stroke-width": 3,
+                "stroke-opacity": 1,
+                "type": "river",
+                "name": "Drisdavati",
+                "name-aka": "Chautang",
+                "period-key": "0003",
+                "map-notes": "Started at Yamunanagar and north of Kaithal, west turn near Hansi, past Hisar, Bhadra, Nohar, Rawatsar, Badopal"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        77.24761962890625,
+                        30.18787014479982
+                    ],
+                    [
+                        75.94573974609375,
+                        29.132970130878636
+                    ],
+                    [
+                        75.728759765625,
+                        29.178543264303006
+                    ],
+                    [
+                        75.16571044921875,
+                        29.1281717828162
+                    ],
+                    [
+                        74.7674560546875,
+                        29.214507763499352
+                    ],
+                    [
+                        74.4049072265625,
+                        29.30077105450428
+                    ],
+                    [
+                        74.08355712890625,
+                        29.3678143847754
+                    ],
+                    [
+                        73.90125274658203,
+                        29.32262483904707
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#05eaff",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "name": "Yamuna-Drisdavati feeder 2",
+                "type" : "river",
+                "period" : ":-2500"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        77.1624755859375,
+                        29.814731721175235
+                    ],
+                    [
+                        76.75048828125,
+                        29.78732302956344
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#05eaff",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "name": "Sutlej feeder 2, mature Harappan",
+                "type": "river",
+                "period": "-2500:-1900",
+                "map-notes": "pg 98, 287 The Lost River, and paper on Sutlej glacial flow till -2500. Mature date as per Kenoyer."
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        75.41015624999999,
+                        30.97289931126414
+                    ],
+                    [
+                        74.28749084472655,
+                        29.620922658778593
+                    ]
+                ]
+            }
+        },
+          {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#05eaff",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "name": "Sutlej feeder 3, mature Harappan",
+                "type": "river",
+                "period": "-2500:-1900",
+                "map-notes": "pg 98, 287 The Lost River, and paper on Sutlej glacial flow till -2500. Mature date as per Kenoyer."
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        76.519775390625,
+                        30.994091500316163
+                    ],
+                    [
+                        76.4373779296875,
+                        30.704058230919504
+                    ],
+                    [
+                        76.365966796875,
+                        30.453409130203596
+                    ],
+                    [
+                        76.22863769531249,
+                        30.268556249047727
+                    ],
+                    [
+                        75.9429931640625,
+                        30.0643399462443
+                    ],
+                    [
+                        75.57769775390625,
+                        29.826348356278118
+                    ],
+                    [
+                        75.201416015625,
+                        29.666575993156652
+                    ],
+                    [
+                        75.00091552734375,
+                        29.532839863453397
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#05eaff",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "name": "Yamuna-Drisdavati feeder 1",
+                "type": "river",
+                "period": ":-2500"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        77.10548400878906,
+                        29.494596993903265
+                    ],
+                    [
+                        76.27738952636719,
+                        29.404908690410327
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    79.2625238,
+                    27.6128321
+                ]
+            },
+            "properties": {
+                "marker-color": "#0e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Kampilya",
+                "name-aka": "Panchakalyanaka",
+                "capital": "Southern Panchala",
+                "persons": "Drupad,Draupadi,Brahmadatta,Kampilya,Samara,Nipa,Ajamida,Varahamihira",
+                "texts": "Panini,SatapathaB,TaittiriyaB,Yoginitantra,TaittiriyaS,MaitrayaniS,Mahabharata",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n105/mode/2up",
+                "info": "Tunnel dug from Ganges to the royal palace, lined with stucco and cells",
+                "visible": true
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#7d7d7d",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Kuru",
+                "kingdom": "Kuru",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n115/mode/2up",
+                "todo": "extant west till Parinah, south Khandva, north Turghana. get proper dates",
+                "period": "-1600:-400",
+                "persons": "Mandhata,Arjuna,Sudhanu,Suvahu,Hiuen Tsang",
+                "info": "Brahmavarta"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            77.5140380859375,
+                            29.482643134466617
+                        ],
+                        [
+                            76.97021484375,
+                            29.716681287231072
+                        ],
+                        [
+                            76.102294921875,
+                            29.931134809868684
+                        ],
+                        [
+                            74.7015380859375,
+                            29.5830116903775
+                        ],
+                        [
+                            75.69580078125,
+                            28.589345223446188
+                        ],
+                        [
+                            77.19543457031249,
+                            28.459033019728043
+                        ],
+                        [
+                            78.9697265625,
+                            28.19308520918522
+                        ],
+                        [
+                            78.9752197265625,
+                            28.680949728554964
+                        ],
+                        [
+                            77.9974365234375,
+                            29.252855985973763
+                        ],
+                        [
+                            77.5140380859375,
+                            29.482643134466617
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#528e3e",
+                "fill-opacity": 0.5,
+                "type": "forest",
+                "name": "Kurujungala",
+                "forest": "Kurujungala",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n115/mode/2up"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            78.057861328125,
+                            29.156958511360703
+                        ],
+                        [
+                            78.277587890625,
+                            28.304380682962783
+                        ],
+                        [
+                            78.94775390625,
+                            28.256005619824972
+                        ],
+                        [
+                            78.9532470703125,
+                            28.66167121641951
+                        ],
+                        [
+                            78.057861328125,
+                            29.156958511360703
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#528e3e",
+                "fill-opacity": 0.5,
+                "type": "forest",
+                "name": "Khandava",
+                "forest": "Khandava",
+                "info": "South boundary of Kurukshetra",
+                "todo": "need better location"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            77.0196533203125,
+                            28.285033294640684
+                        ],
+                        [
+                            77.34374999999999,
+                            28.285033294640684
+                        ],
+                        [
+                            77.34374999999999,
+                            28.459033019728043
+                        ],
+                        [
+                            77.0196533203125,
+                            28.459033019728043
+                        ],
+                        [
+                            77.0196533203125,
+                            28.285033294640684
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Rajgir",
+                "capital": "Magadha",
+                "visible": true,
+                "name-aka": "Rajagriha,Rajagrha,Girivraja,Vasumati,Barhadrathapura,Magadhapura,Varaha,Vrsabha,Raigiri,Caityaka,Bimbisarapuri,Kusagarapura",
+                "period": ":-600",
+                "persons": "Bimbisara,Buddha,Ajatsatru"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.42917251586914,
+                    25.010445226088965
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Magadha",
+                "kingdom": "Magadha",
+                "period": "-600:0",
+                "persons": "Buddha,Bimbisara,Ajatasatru,Jivaka",
+                "texts": "Rgveda",
+                "kingdom-aka": "Kikata",
+                "todo": "Need timeline and dynasty extent"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            84.8583984375,
+                            25.68361258391759
+                        ],
+                        [
+                            84.0234375,
+                            24.62205114321693
+                        ],
+                        [
+                            86.6656494140625,
+                            24.337086982410497
+                        ],
+                        [
+                            86.868896484375,
+                            25.28443774698303
+                        ],
+                        [
+                            84.8583984375,
+                            25.68361258391759
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Campanagara",
+                "river": "Campa",
+                "capital": "Anga",
+                "visible": true,
+                "name-aka": "Malini,Malina"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    86.92296981811523,
+                    25.241901116880236
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Pataliputra",
+                "river": "Ganga",
+                "capital": "Magadha",
+                "persons": "Asoka",
+                "visible": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.166015625,
+                    25.62171595984575
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Anga",
+                "kingdom": "Anga",
+                "period": ":-600",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n55/mode/2up",
+                "persons": "Anga Vairocani,Mahagovinda,Mahinda",
+                "texts": "Mahabharat,Ramayana",
+                "todo": "texts from bclaw references need addition"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            86.47338867187499,
+                            25.38249453892475
+                        ],
+                        [
+                            86.92657470703125,
+                            25.250906464327855
+                        ],
+                        [
+                            87.2314453125,
+                            25.41350860804229
+                        ],
+                        [
+                            86.5228271484375,
+                            25.725683932942644
+                        ],
+                        [
+                            86.47338867187499,
+                            25.38249453892475
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    82.0452243,
+                    27.5154757
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Sravasti",
+                "capital": "Kosala",
+                "visible": true,
+                "name-aka": "Savatthi",
+                "persons": "Buddha,Mahavira,Sravasta,Sravastaka,Yuvanasva,Anathapindikas,Pasenadi",
+                "river": "Achiravati",
+                "info": "Center of Buddhism for 1800 years upto 12th century AD. Key trade center in its heyday, center for trade, religion, and culture. Materially prosperous, well planned city.",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n141/mode/2up"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Kosala",
+                "kingdom": "Kosala",
+                "period": ":-600",
+                "persons": "Buddha,Pasenadi,Lava,Kusa",
+                "texts": "Panini,Astadhyayi,Mahabharata,BhagavataP",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n113/mode/2up",
+                "info": "Kosalans belong to solar race and descent from Manu through Iksvaku"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            81.5789794921875,
+                            27.916766641249065
+                        ],
+                        [
+                            81.3262939453125,
+                            25.760319754713887
+                        ],
+                        [
+                            82.5897216796875,
+                            25.279470734081812
+                        ],
+                        [
+                            82.4468994140625,
+                            27.839076094777816
+                        ],
+                        [
+                            81.5789794921875,
+                            27.916766641249065
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.1070254,
+                    26.0141659
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Vaishali",
+                "capital": "Vajjis,Licchavis",
+                "visible": true,
+                "persons": "Buddha,Amrapali,Ajatsattru",
+                "period": "-600:-400",
+                "todo": "get history"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    79.574607,
+                    27.3812522
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Farrukhabad",
+                "visible": false,
+                "info": "eastern border of Panchala"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Panchala",
+                "kingdom": "Panchala",
+                "texts": "Mahabharat,SatapathaB",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n63/mode/2up",
+                "kingdom-aka": "krivis"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            78.98071289062499,
+                            29.406105055709293
+                        ],
+                        [
+                            78.94775390625,
+                            26.809363588053785
+                        ],
+                        [
+                            79.4805908203125,
+                            26.426308999847024
+                        ],
+                        [
+                            79.7003173828125,
+                            29.132970130878636
+                        ],
+                        [
+                            78.98071289062499,
+                            29.406105055709293
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Matsya",
+                "kingdom": "Matsya",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up",
+                "texts": "Rgveda",
+                "persons": "Virata",
+                "period": ":-600",
+                "todo": "get proper dates"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            77.420654296875,
+                            27.42907083751601
+                        ],
+                        [
+                            76.82739257812501,
+                            27.746746268526383
+                        ],
+                        [
+                            75.1080322265625,
+                            26.92206991673282
+                        ],
+                        [
+                            75.86059570312501,
+                            26.433687518117914
+                        ],
+                        [
+                            77.71179199218751,
+                            26.87553091802303
+                        ],
+                        [
+                            77.420654296875,
+                            27.42907083751601
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    76.1607241,
+                    27.42109
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Viratanagara",
+                "name-aka": "Vairata",
+                "capital": "Matsya",
+                "visible": true,
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.9591395,
+                    26.8993525
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Pava",
+                "name-aka": "Padrauna",
+                "period": "-600:-400",
+                "persons": "Buddha",
+                "info": "place of Buddha's death",
+                "visible": true,
+                "capital": "Malla",
+                "reference": "pg49, BCLaw-Historical geography of ancient India"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    84.007634,
+                    26.848899
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Kusinara",
+                "name-aka": "Kusavati,Kasia",
+                "river": "Hiranyavati or little Gandak",
+                "visible": true,
+                "period": "-600:-400",
+                "capital": "Malla",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n115/mode/2up",
+                "persons": "Buddha,Asoka",
+                "texts": "Divyavadana",
+                "info": "Where Buddha passed away"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Malla",
+                "kingdom": "Malla",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n63/mode/2up",
+                "period": -600
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            83.86962890625,
+                            26.980828590472107
+                        ],
+                        [
+                            83.935546875,
+                            26.842452086767704
+                        ],
+                        [
+                            84.22119140625,
+                            26.846127990018164
+                        ],
+                        [
+                            84.0673828125,
+                            26.986947523104824
+                        ],
+                        [
+                            83.86962890625,
+                            26.980828590472107
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Cedi",
+                "kingdom": "Cedi",
+                "todo": "need better location",
+                "persons": "Buddha",
+                "period": ":-600",
+                "texts": "Mahabharat",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n63/mode/2up"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            79.1839599609375,
+                            26.41155054662258
+                        ],
+                        [
+                            78.321533203125,
+                            25.140311914680755
+                        ],
+                        [
+                            80.6121826171875,
+                            24.392130270038873
+                        ],
+                        [
+                            80.8154296875,
+                            25.65143034703975
+                        ],
+                        [
+                            79.1839599609375,
+                            26.41155054662258
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    81.400355,
+                    25.3590442
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Kosambi",
+                "name-aka": "Kausambi",
+                "capital": "Vamsa",
+                "persons": "Buddha,Udena,Vasabhadatta,Vaisravana,Hiuen Tsang,Pradyota",
+                "visible": true,
+                "period": "-600:700",
+                "texts": "Patanjali,Mahabhasya",
+                "todo": "long history prior to Buddha as per wikipedia going back to Vedic age",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n113/mode/2up",
+                "info": "Vamsa dynasty traced descent from Puru. On great trade route connecting Sravasti with Paithana"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Vamsa",
+                "kingdom": "Vamsa",
+                "kingdom-aka": "Vatsa",
+                "info-link": "pg49, BCLaw-Historical geography of ancient India",
+                "todo": "need exact coordinates",
+                "period": ":-600"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            81.36474609375,
+                            24.97609949369541
+                        ],
+                        [
+                            82.36450195312499,
+                            24.926294766395593
+                        ],
+                        [
+                            82.6007080078125,
+                            25.13533901613099
+                        ],
+                        [
+                            81.683349609375,
+                            25.562265014427492
+                        ],
+                        [
+                            81.10107421874999,
+                            25.834505347339903
+                        ],
+                        [
+                            81.36474609375,
+                            24.97609949369541
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    77.6224725,
+                    27.464387
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Mathura",
+                "name-aka": "Suryapura,Sauripura,Madoura,Methora,Madhupuri",
+                "capital": "Surasena",
+                "visible": true,
+                "river": "Yamuna",
+                "persons": "Krishna,Kamsa,Satrugna,Surasena,Buddha,Mahakaccayana,Upagupta,Vasavadatta,Gunaprabha",
+                "period-key": "0100",
+                "todo": "need dates, need boundaries of Surasena",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n121/mode/2up",
+                "texts": "Panini,Astadhyayi,Patanjali,Mahabhasya,Megasthenes"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Surasena",
+                "kingdom": "Surasena",
+                "kingdom-aka": "Surasenoi",
+                "period": ":-100",
+                "todo": "find dates",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            77.750244140625,
+                            26.77013508224145
+                        ],
+                        [
+                            79.03564453124999,
+                            26.145576207592274
+                        ],
+                        [
+                            81.27685546875,
+                            25.000994300028957
+                        ],
+                        [
+                            81.24938964843749,
+                            25.31423555219758
+                        ],
+                        [
+                            77.76947021484375,
+                            27.605670826465445
+                        ],
+                        [
+                            77.41790771484375,
+                            27.605670826465445
+                        ],
+                        [
+                            77.750244140625,
+                            26.77013508224145
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    81.2714942,
+                    18.5135011
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Potali",
+                "todo": "Assaka kingdom need better location"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Avanti",
+                "kingdom": "Avanti",
+                "todo": "need better coordinates",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up",
+                "period": ":-600",
+                "persons": "Pajjota,Vasabhadatta,Udena"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            74.24560546875,
+                            23.180763583129444
+                        ],
+                        [
+                            74.44335937499999,
+                            21.50418550077842
+                        ],
+                        [
+                            79.881591796875,
+                            21.830906665069758
+                        ],
+                        [
+                            78.936767578125,
+                            24.657002173279082
+                        ],
+                        [
+                            74.24560546875,
+                            23.180763583129444
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    75.7659122,
+                    23.2082878
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Ujjayini",
+                "capital": "Avanti",
+                "visible": true,
+                "todo": "need better location,time",
+                "persons": "Pajjota",
+                "period": ":-600",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Gandhara",
+                "kingdom": "Gandhara",
+                "todo": "Need better location and capital",
+                "period": "-600:-300",
+                "persons": "Pukkusati"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            71.4276123046875,
+                            34.67839374011646
+                        ],
+                        [
+                            71.1090087890625,
+                            33.829356907739296
+                        ],
+                        [
+                            73.157958984375,
+                            33.32593850874474
+                        ],
+                        [
+                            73.3172607421875,
+                            33.747180448149855
+                        ],
+                        [
+                            71.4276123046875,
+                            34.67839374011646
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Kamboja",
+                "name-aka": "Kambujiya",
+                "kingdom": "Kamboja",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n67/mode/2up",
+                "todo": "need more info",
+                "texts": "Astadhyayi,Panini,Mahabhasya,Patanjali,BhagavataP",
+                "period": ":-600"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            72.83660888671875,
+                            33.99347299511967
+                        ],
+                        [
+                            74.31838989257811,
+                            33.33626508437823
+                        ],
+                        [
+                            73.18954467773438,
+                            34.522398580663314
+                        ],
+                        [
+                            72.83660888671875,
+                            33.99347299511967
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    82.063199,
+                    27.54074
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "river": "Achiravati",
+                "name-aka": "Rapti,Airavati,Ajiravati",
+                "persons": "Buddha,Vidudabha,Pasenadi,Sariputta,Ananthapindika"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    72.9897911,
+                    31.5398176
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "tribe": "Ambasthas",
+                "type": "tribe",
+                "name": "Ambasthas",
+                "river": "Askini",
+                "persons": "Alexander",
+                "tribe-aka": "Abastanoi,Sambastai,Sabarcae,Sabagrae",
+                "todo": "get details from other bc law book",
+                "texts": "Mahabharat,BhagvataP,BrahmandaP,MatsyaP,VayuP,VisnuP,Panini,AitareyaB"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.9080639,
+                    32.0028643
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "tribe": "Adrijas",
+                "type": "tribe",
+                "name": "Adrijas",
+                "river": "Ravi",
+                "tribe-aka": "Adraistai,Adhrstas",
+                "texts": "Mahabharat",
+                "persons": "Alexander",
+                "todo": "get info from other bc law book"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    75.6018161,
+                    29.330367
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Agroha",
+                "name-aka": "Agara",
+                "info": "coins,beads,scultures found in excavation",
+                "todo": "need more data"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    69.9485351,
+                    31.702854
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "mountain": "Anjanagiri",
+                "texts": "Ramayana,MarkandeyaP",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n79/mode/2up"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Sivi",
+                "name-aka": "Shorkot",
+                "kingdom": "Sivi",
+                "tribe": "Sivi,Siboi",
+                "texts": "Panini",
+                "todo": "get details from other bclaw book",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n79/mode/2up"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            70.81787109374999,
+                            31.264465555752835
+                        ],
+                        [
+                            70.8673095703125,
+                            30.363396239603716
+                        ],
+                        [
+                            73.641357421875,
+                            30.306503259848835
+                        ],
+                        [
+                            74.9432373046875,
+                            31.16110911780645
+                        ],
+                        [
+                            73.25958251953125,
+                            31.453268014244355
+                        ],
+                        [
+                            72.586669921875,
+                            31.580875273985466
+                        ],
+                        [
+                            72.00302124023438,
+                            31.725831003871207
+                        ],
+                        [
+                            71.32461547851562,
+                            31.837899355285074
+                        ],
+                        [
+                            71.026611328125,
+                            31.85889704445453
+                        ],
+                        [
+                            70.9716796875,
+                            31.704803074739214
+                        ],
+                        [
+                            70.81787109374999,
+                            31.264465555752835
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Asmaka",
+                "kingdom": "Asmaka",
+                "todo": "get better location info",
+                "persons": "Alexander",
+                "kingdom-aka": "Asva,Asvaka",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n79/mode/2up"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            71.87530517578125,
+                            34.687427949314845
+                        ],
+                        [
+                            72.43560791015625,
+                            34.49523909266902
+                        ],
+                        [
+                            72.86956787109375,
+                            35.39576704533903
+                        ],
+                        [
+                            72.3834228515625,
+                            35.47185482057798
+                        ],
+                        [
+                            71.87530517578125,
+                            34.687427949314845
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Ayodhya",
+                "name-aka": "Vinita,Sogeda,Saketa,Iksvakubhumi,Ramapuri",
+                "period": ":400",
+                "persons": "Rama,Pusyamitra Sunga,Vasubandhu,Dasaratha,Haihayas,Fa-Hien,Ptolemy,Yuan Chwang,Vasubandhu",
+                "texts": "Ramayana,Mahabharat,BhagavatP,SkandaP",
+                "info": "Saketa was an important Kosala city, one of the six great cities of ancient India in the time preceding Buddha. On route to Sravasti and Kosambi.",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n81/mode/2up",
+                "visible": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    82.20451354980469,
+                    26.801396395459545
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "kingdom",
+                "name": "Audumbara",
+                "kingdom": "Audumbara",
+                "texts": "Astadhyayi,Panini",
+                "todo": "get details from BC Law papers",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n81/mode/2up"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    75.62850952148436,
+                    32.266233030425255
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "kingdom",
+                "name": "Lichhavi",
+                "kingdom": "Lichhavi",
+                "period": "-600:-400",
+                "persons": "Buddha,Amrapali,Ajatsattu,Vassakara,",
+                "todo": "get proper dates"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            84.8583984375,
+                            26.288490072961164
+                        ],
+                        [
+                            84.8968505859375,
+                            25.70588750345636
+                        ],
+                        [
+                            86.407470703125,
+                            25.433353427832156
+                        ],
+                        [
+                            86.385498046875,
+                            25.918526162075153
+                        ],
+                        [
+                            84.8583984375,
+                            26.288490072961164
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    82.0372056,
+                    27.5085631
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Jetvana",
+                "visible": true,
+                "persons": "Buddha,Ananthapindika,Prasenajit",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n101/mode/2up"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    80.840867,
+                    25.172774
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Chitrakoot",
+                "visible": true,
+                "texts": "Ramayana",
+                "persons": "Rama,Sita,Lakshmana,Bharata",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n87/mode/2up"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "place",
+                "name": "Darvabhisara",
+                "texts": "Mahabharata",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n87/mode/2up"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            74.07806396484375,
+                            33.74832232784014
+                        ],
+                        [
+                            74.30877685546875,
+                            33.39131947587412
+                        ],
+                        [
+                            74.256591796875,
+                            33.63405913759068
+                        ],
+                        [
+                            74.07806396484375,
+                            33.74832232784014
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    79.3888486,
+                    26.810656
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Gavidhumat",
+                "texts": "Patanjali,Mahabhasya",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n93/mode/2up"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    81.388958,
+                    25.340148
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Ghositarama",
+                "river": "Yamuna",
+                "persons": "Buddha,Ghosita,Asoka,Fa Hien, Hiuen Tsang",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n93/mode/2up, http://monastic-asia.wikidot.com/ghositarama"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "type": "place",
+                "name": "Govisana",
+                "persons": "Hiuen Tsang",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n93/mode/2up"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            78.93402099609374,
+                            29.21330915012355
+                        ],
+                        [
+                            78.80905151367186,
+                            28.96609636803482
+                        ],
+                        [
+                            79.02328491210938,
+                            28.717087374872186
+                        ],
+                        [
+                            79.30343627929688,
+                            28.69058765425071
+                        ],
+                        [
+                            78.93402099609374,
+                            29.21330915012355
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    71.8642682,
+                    29.7562979
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Kahror",
+                "persons": "Vikramaditya, Sakas",
+                "period": "78:78",
+                "texts": "Alberuni",
+                "info": "Legendary battle took place here where Vikramaditya beat the Sakas in AD 78",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n101/mode/2up"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Lumbini",
+                "persons": "Buddha,Asoka,Fa Hien,Hiuen Tsang",
+                "info": "Rummindei inscription",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n103/mode/2up"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.27585220336914,
+                    27.47004901089883
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.0409,
+                    27.5803
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Tilaurakot",
+                "name-aka": "Kapilavastu",
+                "persons": "Buddha,Fa Hien,Hiuen Tsang,Asoka",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n103/mode/2up"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Kapisa",
+                "name-aka": "Capissa,Caphusa",
+                "texts": "Panini,Astadhyayi,Mahabharata",
+                "info": "Wine Kapisayana,Shen horses,Mahabharata mentions slavery in the city",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n105/mode/2up"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    69.35977935791014,
+                    35.03083975587924
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Kanyakubja",
+                "name-aka": "Kannauj,Gadipura,Kusasthala,Mahadaya",
+                "persons": "Visvamitra,Ajamila,Harsha Vardhana,Fa Hien,Hieun Tsang,Maukhari,Rastrakuta,Gurjara,Dharmapala,Govindacarya,Karnadeva,Rastrakuta",
+                "texts": "Bana,Harsacarita,Mahabharata,Yoginitantra",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n107/mode/2up",
+                "info": "Tripartite struggle",
+                "visible": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    79.92012977600098,
+                    27.053488528154105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Kasi",
+                "name-aka": "Surundhana,Sudassana,Brahmavaddhana,Pupphavati,Molini,Ramma",
+                "visible": true,
+                "texts": "Atharvaveda,Mahabhashya,Patanjali,Ramayana,Vayu Purana,Panini,Astadhyayi,Mahabharata,BhagavataP,SkandaP,Yoginitantra,Sankhyayan Srautasutra,BrhadaranyakaU,SatapathaB,KausitakiU,BaudhayanaU,",
+                "persons": "Divodasa,Pratardana,Ajatsatru,Mahavira,Buddha,Sulapani Mahadeva,Hariscandra,Saivya",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n107/mode/2up",
+                "info": "Luders' List, trade with Sravasti and Taksasila"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.0126953125,
+                    25.312994123248057
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Martand Sun Temple",
+                "persons": "Lalitaditya",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n111/mode/2up",
+                "info": "Ancient temple in Kashmir"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    75.22031,
+                    33.74559
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    73.3775,
+                    32.6613784
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "name": "Girjakh",
+                "type": "city",
+                "capital": "Kekaya",
+                "name-aka": "Jalalpur,Kekaya",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n111/mode/2up",
+                "info": "Alexander battle with Porus",
+                "texts": "Ramayana,Mahabharata,Panini,Astadhyayi,Patanjali,Mahabhasya"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "kingdom": "Kekaya",
+                "type": "kingdom",
+                "name": "Kekaya",
+                "name-aka": "Kekayadesa",
+                "texts": "Ramayana,Mahabharata,BhagavataP",
+                "visible": true
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            72.6470947265625,
+                            33.390172864722466
+                        ],
+                        [
+                            73.1744384765625,
+                            32.63474905974431
+                        ],
+                        [
+                            73.465576171875,
+                            32.699488680852674
+                        ],
+                        [
+                            73.6358642578125,
+                            33.100745405144245
+                        ],
+                        [
+                            72.6470947265625,
+                            33.390172864722466
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Sagala",
+                "name-aka": "Sakala,Sialkot,Euthydemia,tse-kia,chekia",
+                "capital": "Madra",
+                "persons": "Salya,Nakula,Asoka,Alexander,Menander,Milinda,Hiuen Tsang,Samudragupta,Demetrios,Vahikas,Bahikas",
+                "texts": "Milindpanha,Mahabharata,Divyavadana,Mihirakula,Pentapotamia Indica",
+                "visible": true,
+                "info": "Alexander Cunningham notes surrounding country is still known as Madr-desa (p.185 Geography of Ancient India)",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n135/mode/2up"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.53536987304688,
+                    32.48775521637687
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Sagala",
+                "name-aka": "Sakala,Sialkot,Euthydemia,tse-kia,chekia",
+                "capital": "Madra",
+                "persons": "Alexander,Hiuen Tsang,Bahikas",
+                "visible": true,
+                "info": "At time of Alexander, city of Sagala was at site of this hill, as per Alexander Cunningham (p. 185 Geography of Ancient India), to west of Ravi. Nearby is railway station called Bhalike!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    73.3459524,
+                    31.7160091
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Amba",
+                "name-aka": "Kapi,Kalpi,Munde,Amakatis,Amakapis",
+                "persons": "Kanishka,Hushka,Jushka",
+                "texts": "Geography of Ancient India",
+                "visible": true,
+                "info": "Several ancient mounds, locals mention Raja Amba established these about 2000 years back. Alexander Cunningham (P.195 Geography of Ancient India) identifies with Kanishka and his two brothers. "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    73.96517,
+                    31.5828563
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "kingdom": "Madra",
+                "type": "kingdom",
+                "name": "Madra",
+                "texts": "Astadhyayi,Panini,Mahabhasya,Patanjali",
+                "persons": "Asoka,Alexander,Menander,Milinda,Hiuen Tsang,Samudragupta",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n119/mode/2up",
+                "visible": true
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            73.94485473632812,
+                            32.38460040620993
+                        ],
+                        [
+                            73.41064453125,
+                            32.17096283641326
+                        ],
+                        [
+                            73.0535888671875,
+                            31.80289258670676
+                        ],
+                        [
+                            74.256591796875,
+                            31.62532121329918
+                        ],
+                        [
+                            74.72351074218749,
+                            31.98944183792288
+                        ],
+                        [
+                            75.32501220703125,
+                            32.20118126633929
+                        ],
+                        [
+                            74.71527099609375,
+                            32.68215231030691
+                        ],
+                        [
+                            74.4708251953125,
+                            32.6740608520923
+                        ],
+                        [
+                            73.94485473632812,
+                            32.38460040620993
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.5,
+                "kingdom": "Balkh",
+                "type": "kingdom",
+                "name": "Balkh",
+                "info-link": "https://en.wikipedia.org/wiki/Bahlikas",
+                "info": "origin of Madra tribes in Punjab",
+                "visible": true
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            65.5224609375,
+                            38.09998264736481
+                        ],
+                        [
+                            65.0006103515625,
+                            37.45741810262938
+                        ],
+                        [
+                            65.731201171875,
+                            36.89280138293983
+                        ],
+                        [
+                            66.544189453125,
+                            36.70365959719456
+                        ],
+                        [
+                            67.8680419921875,
+                            36.6551995018735
+                        ],
+                        [
+                            69.334716796875,
+                            36.778492404594154
+                        ],
+                        [
+                            69.312744140625,
+                            37.59682400108367
+                        ],
+                        [
+                            68.00537109375,
+                            37.622933594900864
+                        ],
+                        [
+                            66.4892578125,
+                            37.71859032558816
+                        ],
+                        [
+                            65.5224609375,
+                            38.09998264736481
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    70.5565043,
+                    34.3478578
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Markoh",
+                "info": "Alexander",
+                "todo": "need more data"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    71.3345721,
+                    30.1814786
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Mulasthana",
+                "persons": "Alexander",
+                "info": "Ancient Sun temple existed at Multan. Believed to have been built by Samba, son of Krishna. Hiuen Tsang mentions idol of pure gold with eyes of rubies.AlBiruni etc described it. Destroyed by 10th Century. Malli tribes defeated by Alexander",
+                "todo": "need more data"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    80.4844527,
+                    27.3486698
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Naimisaranya",
+                "todo": "need more data"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    83.1278,
+                    27.443
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "place",
+                "name": "Piprawa",
+                "persons": "Buddha",
+                "period": "Buddha",
+                "visible": true,
+                "info-link": "http://piprahwajewels.co.uk/",
+                "info": "Buddha's relics found here. Meant for his Sakya clan, in addition to a small treasure including drilled beads, gold stars, gold flowers etc."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    71.720272,
+                    34.161084
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Puskalavati",
+                "capital": "Gandhara",
+                "name-aka": "Puskaravati,Peukelaotis,Peukalei",
+                "persons": "Bharata,Puskar,Alexander,Hasti,Maues,Kaniska",
+                "texts": "Panini,Astadhyayi,Ramayana,BrihatS",
+                "period-key": "0101",
+                "visible": true,
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n133/mode/2up",
+                "info": "Ancient city, dated remains to 1400BC. Panini supposed to have lived here. Part of various empires"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    72.824924,
+                    33.7728807
+                ]
+            },
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "",
+                "type": "city",
+                "name": "Taksasila",
+                "capital": "Gandhara",
+                "name-aka": "Taxila,Bhadrasila",
+                "persons": "Asoka,Hieun Tsang",
+                "texts": "Panini,Astadhyayi,Patanjali,Mahabhasya",
+                "visible": true,
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n143/mode/2up",
+                "info": "Ancient center of learning, one of the capitals of Gandhara, along with Puskalavati."
+            }
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 10;
+        padding: 0;
+      }
+    </style>
+    <style>
+      .customBox {
+        background: grey;
+        position: absolute;
+      }
+      .foo {
+        position: absolute;
+        float: center;
+        text-align: center;
+        font-family: "Roboto", "Arial", sans-serif;
+        font-size: 13px;
+        z-index: 5;
+        /*box-shadow: 0 4px 6px -4px #333;*/
+        padding: 5px 10px;
+        background: rgb(255,255,255);
+        border: rgb(229, 229, 229) 1px solid;
+      }
+      .foo *{
+        display:inline-block;
+        margin-left: 5px;
+      }
+      .bar {
+        position: absolute;
+        float: center;
+        text-align: center;
+        font-family: "Roboto", "Arial", sans-serif;
+        font-size: 13px;
+        z-index: 4;
+        /*box-shadow: 0 4px 6px -4px #333;*/
+        padding: 0px 15px 5px 5px;
+        background: rgb(255,255,255);
+        border: rgb(229, 229, 229) 1px solid;
+      }
+      .bar *{
+        display:inline-block;
+        margin-left: 5px;
+        margin-top: 30px;
+      }
+      /* The popup bubble styling. */
+      .popup-bubble {
+        /* Position the bubble centred-above its parent. */
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -100%);
+        /* Style the bubble. */
+        background-color:  rgb(104, 143, 250);
+        padding: 5px;
+        border-radius: 5px;
+        font-family: sans-serif;
+        overflow-y: auto;
+        overflow-x: auto;
+        max-height: 200px;
+        box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
+      }
+      /* The parent of the bubble. A zero-height div at the top of the tip. */
+      .popup-bubble-anchor {
+        /* Position the div a fixed distance above the tip. */
+        position: absolute;
+        width: 100%;
+        bottom: /* TIP_HEIGHT= */ 8px;
+        left: 0;
+      }
+      /* This element draws the tip. */
+      .popup-bubble-anchor::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* Center the tip horizontally. */
+        transform: translate(-50%, 0);
+        /* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
+        width: 0;
+        height: 0;
+        /* The tip is 8px high, and 12px wide. */
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: /* TIP_HEIGHT= */ 8px solid white;
+      }
+      /* JavaScript will position this div at the bottom of the popup tip. */
+      .popup-container {
+        cursor: auto;
+        height: 0;
+        position: absolute;
+        /* The max width of the info window. */
+        width: 200px;
+      }
+    </style>
+    <script src="utils.js"></script>
+    <script src="timeline.js"></script>
+    <script src="map.js"></script>
+    
+    
+  </head>
+  <body>
+      <div id="foo" class="foo">
+      <div>Filter map</div>
+      <div id="filter" >
+        <select id="filter-option" name="filter-list">
+          <option value="date">Date range ("yyyy"-"yyyy")</option>
+          <option value="pname">Person name</option>
+          <option value="aname">Area name</option>
+          <option value="lname">Literary work</option>
+        </select>
+        </div>
+        <div id="filter-text" >
+          <input type="text" id='filter-value'>
+        </div>
+        <button id="run-filter">go</button>
+        <br/>
+        <button id="clear-filter"><i>clear</i></button>
+      </div>
+      <div id="bar" class="bar">
+          <p><button id="run-time">Animate timeline</button></p>
+          <p><button id="run-time-step">Run timeline step</button></p>
+          <div id="period"></div>
+      </div>
+    </div>
+    
+    
+    <div id="map"></div>
+    <div id="content"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpZ51uFd0VeLVAe-LlKyV6P4n1Q-ft2Z8&callback=initMap"
+    ></script>
+  </body>
+</html>
