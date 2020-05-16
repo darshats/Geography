@@ -134,6 +134,8 @@ function getElementForOverlay() {
 }
 
 function zoom_handler(feature) {
+    return; 
+
     // dont changed filtered map on zoom
     if (is_filtered) {
         return;
@@ -240,11 +242,37 @@ var delta = 100;
 timestep_start = global_start;
 timestep_end = timestep_start + delta;
 
-function run_timestep() {
-
+function set_timestep_status(){ 
+    status_msg = null;
     if(timestep_end >= global_end ) {
         // drop a message on screen.
+        status_msg = 'Done';
         console.log('time step has no effect after interval is over')
+    }
+    else {
+        if (timestep_start < 0){
+            status_msg = `${timestep_start} BC - `
+        }
+        else {
+            status_msg = `${timestep_start} AD - `
+        }
+        if (timestep_end < 0){
+            status_msg += `${timestep_end} BC`
+        }
+        else {
+            status_msg += `${timestep_end} AD`
+        }
+        
+    }
+    return status_msg;
+}
+
+function run_timestep() {
+    period_div = document.getElementById('period');
+    period_div.innerHTML = set_timestep_status();
+
+    if(timestep_end >= global_end ) {
+        return;
     }
 
     // find all features that are part of this interval, and make those visible with right geometry.
@@ -271,29 +299,23 @@ function run_timestep() {
         
         if (feature_geometry !== undefined && feature_geometry !== null) {
             if (feature_geometry !== DEFAULT_GEO) {
-                // if its default geo do nothing, retain current values
+                
                 console.log(`${name} has different geo during period (${timestep_start}, ${timestep_end})`);
                 feature.setGeometry(feature_geometry);
-                map.data.overrideStyle(feature, { visible: true });
-                // if its a polygon, ensure the overlay shows as well.
-                if (feature.getGeometry().getType() === 'Polygon') {
-                    var txtOverlay = feature.getProperty(POLYGON_NAME);
-                    txtOverlay.setMap(map);
-                }
             }
-            else {
-                // Feature to be displayed with default geometry. Ensure feature is visible
-                map.data.overrideStyle(feature, { visible: true });
-                console.log(`${name} exists during period (${timestep_start}, ${timestep_end}), with default geo from before`);
+            // Ensure feature is visible
+            map.data.overrideStyle(feature, { visible: true });
+            // if its a polygon, ensure the overlay shows as well.
+            if (feature.getGeometry().getType() === 'Polygon') {
+                var txtOverlay = feature.getProperty(POLYGON_NAME);
+                txtOverlay.setMap(map);
             }
         }
         if (feature_properties !== undefined && feature_properties !== null) {
             if (feature_properties !== DEFAULT_PROP){
                 console.log(`${name} has different properties during period (${timestep_start}, ${timestep_end})`);
+                // TODO some are styles and some are properties
                 map.data.overrideStyle(feature, feature_properties);
-            }
-            else {
-                console.log(`${name} exists during period (${timestep_start}, ${timestep_end}), with default props from before`);
             }
         }
     });
@@ -305,10 +327,6 @@ function run_timestep() {
 function run_timeline() {
     var interval = setInterval(function(){
         run_timestep();
-        
-        // done rendering map for this interval. Check if we should stop
-        timestep_start += delta;
-        timestep_end += delta;
         if(timestep_end >= global_end ) {
             clearInterval(interval);
             console.log(`Ending animation at timestep_end:${timestep_end}`)
@@ -317,23 +335,7 @@ function run_timeline() {
     500);
 }
 
-function setup_listeners() {
-    var runFilterButton = document.getElementById('run-filter');
-    google.maps.event.addDomListener(runFilterButton, 'click', process_filter);
 
-    var clear_filter_button = document.getElementById('clear-filter');
-    google.maps.event.addDomListener(clear_filter_button, 'click', clear_filter);
-
-    var animate_timeline_button = document.getElementById('run-time');
-    google.maps.event.addDomListener(animate_timeline_button, 'click', run_timeline);
-
-    var run_timestep_button = document.getElementById('run-time-step');
-    google.maps.event.addDomListener(run_timestep_button, 'click', run_timestep);
-
-
-    map.data.addListener('click', click_handler);
-    map.addListener('zoom_changed', zoom_handler);
-}
 
 var map;
 var is_filtered = false;
@@ -349,6 +351,27 @@ function initMap() {
 
     Popup = createPopupClass();
     setup_listeners();
+
+    // setup map as at beginning
+    setTimeout(function(){run_timestep();}, 600);
+
+    function setup_listeners() {
+        /*var runFilterButton = document.getElementById('run-filter');
+        google.maps.event.addDomListener(runFilterButton, 'click', process_filter);
+    
+        var clear_filter_button = document.getElementById('clear-filter');
+        google.maps.event.addDomListener(clear_filter_button, 'click', clear_filter);*/
+    
+        var animate_timeline_button = document.getElementById('run-time');
+        google.maps.event.addDomListener(animate_timeline_button, 'click', run_timeline);
+    
+        var run_timestep_button = document.getElementById('run-time-step');
+        google.maps.event.addDomListener(run_timestep_button, 'click', run_timestep);
+    
+    
+        map.data.addListener('click', click_handler);
+        map.addListener('zoom_changed', zoom_handler);
+    }
 
     map.data.setStyle(function (feature) {
         if (feature.getGeometry().getType() === "Point") {
@@ -385,18 +408,30 @@ function initMap() {
                 return ({ icon: {}, visible: false })
             }
         }
-        else if (feature.getGeometry().getType() === "LineString") {
+        else if (feature.getGeometry().getType() === "LineString" 
+                || feature.getGeometry().getType() === "MultiLineString") {
             var riverName = feature.getProperty('name');
             var river_type = feature.getProperty('type');
             if (river_type !== undefined && river_type !== null && river_type === 'river') {
                 var strokeWeight = 2;
+                var strokeColor = 'blue';
+                var strokeOpacity = 1;
                 var sw = feature.getProperty('stroke-width');
+                var sc = feature.getProperty('stroke');
+                var so = feature.getProperty('stroke-opacity');
                 if (sw !== undefined && sw !== null){
                     strokeWeight = parseInt(sw);
                 }
+                if (sc !== undefined && sc !== null){
+                    strokeColor = sc;
+                }
+                if (so != undefined && so !== null){
+                    strokeOpacity = parseFloat(so);
+                }
                 return ({
-                    strokeColor: 'blue', 
-                    strokeWeight: strokeWeight
+                    strokeColor: sc, 
+                    strokeWeight: strokeWeight,
+                    strokeOpacity: so
                 })
             }
         }
