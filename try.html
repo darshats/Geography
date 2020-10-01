@@ -47,13 +47,13 @@
         z-index: 4;
         /*box-shadow: 0 4px 6px -4px #333;*/
         padding: 0px 15px 5px 5px;
-        background: rgb(255,255,255);
+        background: #777777;
         border: rgb(229, 229, 229) 1px solid;
       }
       .bar *{
         display:inline-block;
         margin-left: 5px;
-        margin-top: 30px;
+        margin-top: 5px;
       }
       /* The popup bubble styling. */
       .popup-bubble {
@@ -104,31 +104,29 @@
         /* The max width of the info window. */
         width: 200px;
       }
+
+      /* use "animation: slow-fade 3s steps(9) forwards" in the element style*/
+      @keyframes slow-fade {
+        from {
+          opacity: 1;
+          left: 0px;
+          top: 0px;
+        }
+        to {
+          opacity: 0;
+          left: -100px;
+          top: -100px;
+        }
+      }
     </style>
     <script src="utils.js"></script>
     <script src="timeline.js"></script>
+    <script src="search.js"></script>
     <script src="map.js"></script>
     
     
   </head>
   <body>
-      <!--div id="foo" class="foo">
-      <div>Filter map</div>
-      <div id="filter" >
-        <select id="filter-option" name="filter-list">
-          <option value="date">Date range ("yyyy"-"yyyy")</option>
-          <option value="pname">Person name</option>
-          <option value="aname">Area name</option>
-          <option value="lname">Literary work</option>
-        </select>
-        </div>
-        <div id="filter-text" >
-          <input type="text" id='filter-value'>
-        </div>
-        <button id="run-filter">go</button>
-        <br/>
-        <button id="clear-filter"><i>clear</i></button>
-      </div-->
       <div id="bar" class="bar">
           <p><button id="run-time">Animate timeline</button></p>
           <p><button id="run-time-step">Run timeline step</button></p>
@@ -139,6 +137,7 @@
     
     <div id="map"></div>
     <div id="content"></div>
+    <div id='search'></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpZ51uFd0VeLVAe-LlKyV6P4n1Q-ft2Z8&callback=initMap"
     ></script>
   </body>

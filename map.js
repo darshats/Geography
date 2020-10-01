@@ -6,6 +6,8 @@ var filter_mappings = {
 
 var Popup;
 var currentPopup;
+var FadingPopup;
+var fadedPopup;
 const CHRONO_GEO = 'chrono_extent';
 const CHRONO_PROP = 'chrono_prop';
 const POLYGON_NAME = 'polygon_txt_overlay'
@@ -16,27 +18,26 @@ const DEFAULT_PROP = 'default_properties'
 function click_handler(event) {
     var feature = event.feature;
     var content;
+    cleanupExistingOverlay();
 
-    if (feature.getGeometry().getType() === "Point") {
-        // gather available info and render it
-        var name = feature.getProperty('name');
-        if (name !== undefined && name !== null) {
-            content = "<div><lr><b>" + name + "</b></lr><hr/></div>";
-        }
-        var name_aka = feature.getProperty('name-aka');
-        if (name_aka !== undefined && name_aka !== null) {
-            var data3 = "Also known as: " + name_aka;
-            content += "<div>" + data3 + "</div>"
-        }
-        // for city, add any other info
-        var pointType = feature.getProperty('type');
-        if (pointType !== undefined && pointType !== null) {
-            if (pointType === 'city') {
-                var capital = feature.getProperty('capital');
-                if (capital !== undefined && capital !== null) {
-                    var data1 = "Capital of <b>" + capital + "</b>";
-                    content = content + "<div>" + data1 + "</div>"
-                }
+    // gather available info and render it
+    var name = feature.getProperty('name');
+    if (name !== undefined && name !== null) {
+        content = "<div><lr><b>" + name + "</b></lr><hr/></div>";
+    }
+    var name_aka = feature.getProperty('name-aka');
+    if (name_aka !== undefined && name_aka !== null) {
+        var data3 = "Also known as: " + name_aka;
+        content += "<div>" + data3 + "</div>"
+    }
+    // for city, add any other info
+    var pointType = feature.getProperty('type');
+    if (pointType !== undefined && pointType !== null) {
+        if (pointType === 'city') {
+            var capital = feature.getProperty('capital');
+            if (capital !== undefined && capital !== null) {
+                var data1 = "Capital of <b>" + capital + "</b>";
+                content = content + "<div>" + data1 + "</div>"
             }
         }
         var river = feature.getProperty('river');
@@ -44,70 +45,30 @@ function click_handler(event) {
             var data2 = "On banks of " + river;
             content += "<div>" + data2 + "</div>"
         }
-
-        info = event.feature.getProperty('info');
-        if (info !== undefined && info !== null){
-            content += "<div><lr><p>" + info + "</p></lr></div>"
-        }
-
-        var info_link = feature.getProperty('info-link');
-        if (info_link !== undefined && info_link !== null) {
-            content += "<hr><font size=\"1\"><a href=\"" + info_link + "\">More info</a></font></hr>";
-        }
-        if (content !== undefined && content !== null) {
+    }
+    // get info
+    info = event.feature.getProperty('info');
+    if (info !== undefined && info !== null) {
+        content += "<div><lr><p>" + info + "</p></lr></div>"
+    }
+    // get info-link
+    var info_link = feature.getProperty('info-link');
+    if (info_link !== undefined && info_link !== null) {
+        content += "<hr><font size=\"1\"><a href=\"" + info_link + "\">More info</a></font></hr>";
+    }
+    if (content !== undefined && content !== null) {
+        // for point, retrieve exact position
+        if (feature.getGeometry().getType() === "Point") {
             position = feature.getGeometry().get();
-            cleanupExistingOverlay();
-            var popup_div = getElementForOverlay();
-            popup_div.innerHTML = content;
-            currentPopup = new Popup(position, popup_div);
-            currentPopup.setMap(map);
-
-
-
-            /*
-            cleanupExistingOverlay();
-            var infoWindow = new google.maps.InfoWindow({ content: "", setZIndex: 10 });
-            infoWindow.setContent(content);
-            var anchor = new google.maps.MVCObject();
-            anchor.setValues({ //position of the point
-                position: event.latLng,
-                anchorPoint: new google.maps.Point(0, -40)
-            });
-            infoWindow.open(map, anchor);*/
         }
-    }
-    else if (feature.getGeometry().getType() == "LineString"){
-        // we have a river
-        var name = feature.getProperty('name');
-        if (name !== undefined && name !== null) {
-            content = "<div><lr><b>" + name + "</b></lr><hr/></div>";
-        }
-        var name_aka = feature.getProperty('name-aka');
-        if (name_aka !== undefined && name_aka !== null) {
-            var data3 = "Also known as: " + name_aka;
-            content += "<div>" + data3 + "</div>"
-        }
-
-        info = event.feature.getProperty('info');
-        if (info !== undefined && info !== null){
-            content += "<div><lr><p>" + info + "</p></lr></div>"
-        }
-
-        var info_link = feature.getProperty('info-link');
-        if (info_link !== undefined && info_link !== null) {
-            content += "<hr><font size=\"1\"><a href=\"" + info_link + "\">More info</a></font></hr>";
-        }
-        if (content !== undefined && content !== null) {
+        else {
             position = event.latLng;
-            cleanupExistingOverlay();
-            var popup_div = getElementForOverlay();
-            popup_div.innerHTML = content;
-            currentPopup = new Popup(position, popup_div);
-            currentPopup.setMap(map);
         }
-    }
-    else{
         cleanupExistingOverlay();
+        var popup_div = getElementForOverlay();
+        popup_div.innerHTML = content;
+        currentPopup = new Popup(position, popup_div);
+        currentPopup.setMap(map);
     }
 }
 
@@ -133,8 +94,56 @@ function getElementForOverlay() {
     return popupDiv;
 }
 
+function getElementForFadingOverlay() {
+    // create new div for popup
+    fpopupDiv = document.createElement('div');
+    fpopupDiv.setAttribute('id', 'fadingcontent');
+    // insert after map
+    document.getElementById('map').insertAdjacentElement('afterend', fpopupDiv);
+    return fpopupDiv;
+}
+
+function cleanupFadedOverlay() {
+    // cleanup of existing popup
+    if (fadedPopup !== undefined && fadedPopup !== null) {
+        fadedPopup.setMap(null);
+        fadedPopup = null;
+    }
+    var fpopupDiv = document.getElementById('fadingcontent');
+    if (fpopupDiv !== undefined && fpopupDiv !== null) {
+        fpopupDiv.parentNode.removeChild(fpopupDiv);
+        fpopupDiv = null;
+    }
+}
+
+function createEventPopup(feature) {
+    // at present, support events tied to a Point
+    if (feature.getGeometry().getType() !== "Point") {
+        return null;
+    }
+    var pointType = feature.getProperty('type');
+    if (pointType !== undefined && pointType !== null) {
+        if (pointType !== 'event') {
+            return;
+        }
+    }
+
+    position = feature.getGeometry().get();
+    var name = feature.getProperty('name');
+    var content = 'placeholder';
+    if (name !== undefined && name !== null) {
+        content = "<div><lr><b>" + name + "</b></lr><hr/></div>";
+    }
+
+    //cleanupFadedOverlay();
+    var fpopup_div = getElementForFadingOverlay();
+    fpopup_div.innerHTML = content;
+    fadedPopup = new FadingPopup(position, fpopup_div);
+    fadedPopup.setMap(map);
+}
+
 function zoom_handler(feature) {
-    return; 
+    return;
 
     // dont changed filtered map on zoom
     if (is_filtered) {
@@ -156,8 +165,6 @@ function zoom_handler(feature) {
 function get_filter_option() {
     var selectBox = document.getElementById('filter-option');
     return selectBox.value;
-    //google.maps.event.addDomListener(selectBox, 'change', function() {
-    //});
 }
 
 function get_filter_value() {
@@ -204,8 +211,7 @@ function get_feature_data_for_interval(feature, timestep_start, timestep_end) {
     var name = feature.getProperty('name')
     var chrono_geo = feature.getProperty(CHRONO_GEO);
     var chrono_prop = feature.getProperty(CHRONO_PROP);
-    if (chrono_geo === undefined || chrono_geo === null || chrono_prop === undefined || chrono_prop === null){
-        // this is not supposed to happen
+    if (chrono_geo === undefined || chrono_geo === null || chrono_prop === undefined || chrono_prop === null) {
         console.error('Chrono data not found on feature ' + name);
         return null;
     }
@@ -214,55 +220,55 @@ function get_feature_data_for_interval(feature, timestep_start, timestep_end) {
     properties = null;
 
     // extent is a dictionary of range-geometry pairs. Return the feature's range that contains the current time step
-    for (var period in chrono_geo){
-        if (is_timestep_in_period(timestep_start, timestep_end, period)){
+    for (var period in chrono_geo) {
+        if (is_timestep_in_period(timestep_start, timestep_end, period)) {
             geometry = chrono_geo[period]; // this is a geometry object. Caller to do setGeometry on the feature
             break;
         }
     }
 
-    for (var period in chrono_prop){
-        if (is_timestep_in_period(timestep_start, timestep_end, period)){
+    for (var period in chrono_prop) {
+        if (is_timestep_in_period(timestep_start, timestep_end, period)) {
             properties = chrono_prop[period];
             break;
         }
     }
 
-    if (geometry !== null || properties !== null){
-        return [geometry, properties]; 
+    if (geometry !== null || properties !== null) {
+        return [geometry, properties];
     }
 
     return null;
 }
 
-var global_start = -3000;
-var global_end = 2000;
-var delta = 100;
+var global_start = -1000;
+var global_end = -500;
+var delta = 1;
 
 timestep_start = global_start;
 timestep_end = timestep_start + delta;
 
-function set_timestep_status(){ 
+function set_timestep_status() {
     status_msg = null;
-    if(timestep_end >= global_end ) {
+    if (timestep_end >= global_end) {
         // drop a message on screen.
         status_msg = 'Done';
         console.log('time step has no effect after interval is over')
     }
     else {
-        if (timestep_start < 0){
+        if (timestep_start < 0) {
             status_msg = `${timestep_start} BC - `
         }
         else {
             status_msg = `${timestep_start} AD - `
         }
-        if (timestep_end < 0){
+        if (timestep_end < 0) {
             status_msg += `${timestep_end} BC`
         }
         else {
             status_msg += `${timestep_end} AD`
         }
-        
+
     }
     return status_msg;
 }
@@ -271,7 +277,7 @@ function run_timestep() {
     period_div = document.getElementById('period');
     period_div.innerHTML = set_timestep_status();
 
-    if(timestep_end >= global_end ) {
+    if (timestep_end >= global_end) {
         return;
     }
 
@@ -280,10 +286,9 @@ function run_timestep() {
         var name = feature.getProperty('name');
         var feature_data = get_feature_data_for_interval(feature, timestep_start, timestep_end);
 
-        if (feature_data === undefined || feature_data === null){
+        if (feature_data === undefined || feature_data === null) {
             // if time step is completely missing for a feature, make it invisible. It is either before its time, or after its time,
             // or author forgot to make a contiguous timeline!
-            console.log(`${name} not existing during period (${timestep_start}, ${timestep_end})`)
             map.data.overrideStyle(feature, { visible: false });
             // if its a polygon, hid the overlay as well.
             if (feature.getGeometry().getType() === 'Polygon') {
@@ -293,123 +298,145 @@ function run_timestep() {
             return;
         }
 
-        feature_geometry = feature_data[0];
-        feature_properties = feature_data[1];
-        console.log(`${name} exists during period (${timestep_start}, ${timestep_end})`);
-        
-        if (feature_geometry !== undefined && feature_geometry !== null) {
-            if (feature_geometry !== DEFAULT_GEO) {
-                
-                console.log(`${name} has different geo during period (${timestep_start}, ${timestep_end})`);
-                feature.setGeometry(feature_geometry);
-            }
-            // Ensure feature is visible
-            map.data.overrideStyle(feature, { visible: true });
-            // if its a polygon, ensure the overlay shows as well.
-            if (feature.getGeometry().getType() === 'Polygon') {
-                var txtOverlay = feature.getProperty(POLYGON_NAME);
-                txtOverlay.setMap(map);
-            }
+        // for event feature types, we just need to create the popup to render them and exit. For all other features
+        // setup the geometry and properties for this timestep
+        if (feature.getGeometry().getType() === "Point" && feature.getProperty('type') === 'event') {
+            createEventPopup(feature);
         }
-        if (feature_properties !== undefined && feature_properties !== null) {
-            if (feature_properties !== DEFAULT_PROP){
-                console.log(`${name} has different properties during period (${timestep_start}, ${timestep_end})`);
-                // TODO some are styles and some are properties
-                map.data.overrideStyle(feature, feature_properties);
+        else {
+            feature_geometry = feature_data[0];
+            feature_properties = feature_data[1];
+            if (feature_geometry !== undefined && feature_geometry !== null) {
+                if (feature_geometry !== DEFAULT_GEO) {
+                    feature.setGeometry(feature_geometry);
+                    // TODO - if non default geometry, then its being created fresh. Do a setStyle.
+                }
+                // Ensure feature is visible
+                map.data.overrideStyle(feature, { visible: true });
+                // if its a polygon, ensure the overlay shows as well.
+                if (feature.getGeometry().getType() === 'Polygon') {
+                    var txtOverlay = feature.getProperty(POLYGON_NAME);
+                    txtOverlay.setMap(map);
+                }
+            }
+            if (feature_properties !== undefined && feature_properties !== null) {
+                if (feature_properties !== DEFAULT_PROP) {
+                    // TODO some are styles and some are properties
+                    map.data.overrideStyle(feature, feature_properties);
+                }
             }
         }
     });
     timestep_start += delta;
     timestep_end += delta;
-    
+
 }
 
 function run_timeline() {
-    var interval = setInterval(function(){
+    var interval = setInterval(function () {
         run_timestep();
-        if(timestep_end >= global_end ) {
+        if (timestep_end >= global_end) {
             clearInterval(interval);
             console.log(`Ending animation at timestep_end:${timestep_end}`)
         }
-    }, 
-    500);
+    },
+        60);
 }
-
-
 
 var map;
 var is_filtered = false;
 
 function initMap() {
     var mapDiv = document.getElementById('map');
-    map = new google.maps.Map(mapDiv, {center: {lat: 28.6390792, lng: 76.87603 }, zoom: 6, mapTypeId: 'satellite'});
+    map = new google.maps.Map(mapDiv,
+        {
+            center: { lat: 28.6390792, lng: 76.87603 },
+            zoom: 6,
+            mapTypeId: 'satellite',
+            streetViewControl: false,
+            fullscreenControl: true,
+            fullscreenControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_BOTTOM,
+            }
+        });
     map.data.loadGeoJson('saraswati.json', null, function (features) {
-            set_polygon_names(features);
-            setup_chrono_extent(features);
-        }
+        set_polygon_names(features);
+        setup_chrono_extent(features);
+    }
     );
 
+    var searchDiv = document.getElementById('search');
+    searchControl(searchDiv, map);
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(searchDiv);
+
     Popup = createPopupClass();
+    FadingPopup = createFadingPopupClass();
     setup_listeners();
 
     // setup map as at beginning
-    setTimeout(function(){run_timestep();}, 600);
+    setTimeout(function () { run_timestep(); }, 1000);
 
     function setup_listeners() {
-        /*var runFilterButton = document.getElementById('run-filter');
-        google.maps.event.addDomListener(runFilterButton, 'click', process_filter);
-    
-        var clear_filter_button = document.getElementById('clear-filter');
-        google.maps.event.addDomListener(clear_filter_button, 'click', clear_filter);*/
-    
         var animate_timeline_button = document.getElementById('run-time');
         google.maps.event.addDomListener(animate_timeline_button, 'click', run_timeline);
-    
+
         var run_timestep_button = document.getElementById('run-time-step');
         google.maps.event.addDomListener(run_timestep_button, 'click', run_timestep);
-    
-    
+
+        var do_search_button = document.getElementById('run-filter');
+        google.maps.event.addDomListener(do_search_button, 'click', process_filter);
+
         map.data.addListener('click', click_handler);
         map.addListener('zoom_changed', zoom_handler);
     }
 
     map.data.setStyle(function (feature) {
+        var pointType = feature.getProperty('type');
+        var pointTitle = feature.getProperty('name');
+        var visibility = feature.getProperty('visible');
+
+        if (visibility === undefined || visibility === null || visibility === false) {
+            return ({ icon: {}, visible: false });
+        }
+
         if (feature.getGeometry().getType() === "Point") {
-            var pointType = feature.getProperty('type');
-            var pointTitle = feature.getProperty('name');
-            var visibility = feature.getProperty('visible');
-            if (visibility === undefined || visibility === null) {
-                visibility = false;
-            }
             if (pointTitle !== undefined && pointTitle !== null) {
                 if (pointType === 'city') {
-                    return /** @type {!google.maps.Data.StyleOptions} */({
+                    return ({
                         title: pointTitle,
-                        icon: 'city.png',
-                        visible: visibility
+                        icon: 'city.png'
                     });
                 }
                 else if (pointType === 'place') {
                     return /** @type {!google.maps.Data.StyleOptions} */({
                         title: pointTitle,
-                        icon: 'place.png',
-                        visible: visibility
+                        icon: 'place.png'
                     });
                 }
                 else if (pointType === 'site') {
                     return /** @type {!google.maps.Data.StyleOptions} */({
                         title: pointTitle,
-                        icon: 'site.png',
-                        visible: visibility
+                        icon: 'site.png'
                     });
+                }
+                else if (pointType === 'kingdom') {
+                    return ({
+                        title: pointTitle,
+                        // kingdoms dont have an icon
+                        icon: 'city.png'
+                    });
+                }
+                else {
+                    // for example event type. Only create faded popup, no markers
+                    return ({ icon: {}, visible: false });
                 }
             }
             else {
                 return ({ icon: {}, visible: false })
             }
         }
-        else if (feature.getGeometry().getType() === "LineString" 
-                || feature.getGeometry().getType() === "MultiLineString") {
+        else if (feature.getGeometry().getType() === "LineString"
+            || feature.getGeometry().getType() === "MultiLineString") {
             var riverName = feature.getProperty('name');
             var river_type = feature.getProperty('type');
             if (river_type !== undefined && river_type !== null && river_type === 'river') {
@@ -419,17 +446,17 @@ function initMap() {
                 var sw = feature.getProperty('stroke-width');
                 var sc = feature.getProperty('stroke');
                 var so = feature.getProperty('stroke-opacity');
-                if (sw !== undefined && sw !== null){
+                if (sw !== undefined && sw !== null) {
                     strokeWeight = parseInt(sw);
                 }
-                if (sc !== undefined && sc !== null){
+                if (sc !== undefined && sc !== null) {
                     strokeColor = sc;
                 }
-                if (so != undefined && so !== null){
+                if (so != undefined && so !== null) {
                     strokeOpacity = parseFloat(so);
                 }
                 return ({
-                    strokeColor: sc, 
+                    strokeColor: sc,
                     strokeWeight: strokeWeight,
                     strokeOpacity: so
                 })
@@ -437,8 +464,17 @@ function initMap() {
         }
         else if (feature.getGeometry().getType() === "Polygon") {
             var poly_type = feature.getProperty('type');
-            if (poly_type !== undefined && poly_type !== null && poly_type === 'forest') {
-                return ({ fillColor: 'green' })
+            if (poly_type !== undefined && poly_type !== null) {
+                if (poly_type === 'forest') {
+                    return ({ fillColor: 'green' });
+                }
+                else if (poly_type === 'kingdom'){
+                    var fc = feature.getProperty('fill');
+                    var fo = feature.getProperty('fill-opacity');
+                    if (fc !== undefined && fc !== null && fo !== undefined && fo !== null){
+                        return ({ fillColor: fc, fillOpacity: parseFloat(fo)})
+                    }
+                }
             }
         }
     });
@@ -468,9 +504,9 @@ function initMap() {
             }
         }
     }
-    
-    function setup_chrono_extent(features){
-        for (i=0; i<features.length; i++){
+
+    function setup_chrono_extent(features) {
+        for (i = 0; i < features.length; i++) {
             // stores time-range,geometry pair(s) as a property on feature for later use
             var geometry = {};
             // stores time-range, propertylist pair(s) as a property on feature for later use
@@ -480,43 +516,42 @@ function initMap() {
             period_key = features[i].getProperty('period-key');
 
             // some features may have only one range-coordinate pair defined by period, default geometry
-            if (period !== undefined && period != null){
+            if (period !== undefined && period != null) {
                 // if period is defined we only have the default geometry and other properties
                 geometry[period] = DEFAULT_GEO;
                 properties[period] = DEFAULT_PROP;
             }
 
             // some features may have period to define initial geometry and period-key to define later overrides
-            if (period_key !== undefined && period_key !== null)
-            {
+            if (period_key !== undefined && period_key !== null) {
                 // find range,geometry and range,properties for this feature and add to dictionary 
-                td.elements.forEach(function(x){
+                td.elements.forEach(function (x) {
                     if (x['place_key'] === period_key) {
-                        x.timeline.forEach(function(rcp){
+                        x.timeline.forEach(function (rcp) {
                             var period = rcp.period;
                             geometry[period] = DEFAULT_GEO;
-                            if (rcp.coordinates !== undefined && rcp.coordinates !== null){
+                            if (rcp.coordinates !== undefined && rcp.coordinates !== null) {
                                 var latlngs = []
-                                rcp.coordinates.forEach(function(c){
-                                    var ll = new google.maps.LatLng(c[1],c[0]);
+                                rcp.coordinates.forEach(function (c) {
+                                    var ll = new google.maps.LatLng(c[1], c[0]);
                                     latlngs.push(ll);
                                 })
                                 geometry[period] = new google.maps.Data.LineString(latlngs);
                             }
                             // copy properties if present
                             properties[period] = DEFAULT_PROP;
-                            if (rcp.properties !== undefined && rcp.properties !== null){
+                            if (rcp.properties !== undefined && rcp.properties !== null) {
                                 properties[period] = rcp.properties;
                             }
                         })
                     }
                 })
             }
-            if ((period === undefined || period === null ) && (period_key === undefined || period_key === null)){
+            if ((period === undefined || period === null) && (period_key === undefined || period_key === null)) {
                 // if neither period nor period-key are defined use default range
                 var default_period = defined_periods.Default;
-                geometry[default_period] = DEFAULT_GEO;
-                properties[default_period] = DEFAULT_PROP;
+                geometry[default_period] = null;
+                properties[default_period] = null;
             }
             features[i].setProperty(CHRONO_GEO, geometry);
             features[i].setProperty(CHRONO_PROP, properties);
@@ -650,4 +685,49 @@ function createPopupClass() {
         this.containerDiv.style.display = 'block';
     };
     return Popup;
+}
+
+function createFadingPopupClass() {
+    /**
+    * A customized popup on the map.
+    * @param {!google.maps.LatLng} position
+    * @param {!Element} content The bubble div.
+    * @constructor
+    * @extends {google.maps.OverlayView}
+    */
+    function FadingPopup(position, content) {
+        this.position = position;
+        content.classList.add('popup-bubble');
+        // This zero-height div is positioned at the bottom of the bubble.
+        var bubbleAnchor = document.createElement('div');
+        bubbleAnchor.classList.add('popup-bubble-anchor');
+        bubbleAnchor.appendChild(content);
+        // This zero-height div is positioned at the bottom of the tip.
+        this.containerDiv = document.createElement('div');
+        this.containerDiv.classList.add('popup-container');
+        this.containerDiv.appendChild(bubbleAnchor);
+        // Optionally stop clicks, etc., from bubbling up to the map.
+        google.maps.OverlayView.preventMapHitsAndGesturesFrom(this.containerDiv);
+    }
+    // ES5 magic to extend google.maps.OverlayView.
+    FadingPopup.prototype = Object.create(google.maps.OverlayView.prototype);
+    /** Called when the popup is added to the map. */
+    FadingPopup.prototype.onAdd = function () {
+        this.getPanes().floatPane.appendChild(this.containerDiv);
+    };
+    /** Called when the popup is removed from the map. */
+    FadingPopup.prototype.onRemove = function () {
+        if (this.containerDiv.parentElement) {
+            this.containerDiv.parentElement.removeChild(this.containerDiv);
+        }
+    };
+    /** Called each frame when the popup needs to draw itself. */
+    FadingPopup.prototype.draw = function () {
+        var divPosition = this.getProjection().fromLatLngToDivPixel(this.position);
+        this.containerDiv.style.left = divPosition.x + 'px';
+        this.containerDiv.style.top = divPosition.y + 'px';
+        this.containerDiv.style.display = 'block';
+        this.containerDiv.style.animation = "slow-fade 3s steps(9) forwards";
+    };
+    return FadingPopup;
 }

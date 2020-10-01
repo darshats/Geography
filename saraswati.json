@@ -43,7 +43,7 @@
                 "river": "Saraswati",
                 "period": "-1600:",
                 "todo": "Start date of this city",
-                "visible": true
+                "visible": false
             }
         },
         {
@@ -179,10 +179,7 @@
             "geometry": {
               "type": "LineString",
               "coordinates": [
-                [
-                    76.56234741210938,
-                    29.99657038669949
-                ],
+                
                 [
                     76.87408447265625,
                     30.173624550358536
@@ -216,13 +213,17 @@
                 "name": "Upper Saraswati",
                 "period": ":-2600",
                 "period-key": "0001",
-                "info": "Course of ancient Saraswati river, as recreated from multiple documents, but primarily the excellent book by Michel Danino: The Lost River - On the trail of the SARASVATI. The course shows the Ghagghar joining Sarsuti near Rasulpur. This combined stream joins Chautang aka Drishdavati near Hanumangarh and flows into Pakistan beyond Anupgarh. In the past, a tributary of Sutlej (not shown) would have also met the upper arm which likely resulted in the snow-fed year round river that was described in the Vedas. TODO - update course with time",
+                "info": "Course of ancient Saraswati river, as recreated from multiple documents, but primarily the excellent book by Michel Danino: The Lost River - On the trail of the SARASVATI. The course shows the Ghagghar joining Sarsuti near Rasulpur. This combined stream joins Chautang aka Drishdavati near Hanumangarh and flows into Pakistan beyond Anupgarh. A tributary of Sutlej met this upper arm which resulted in the snow-fed year round river that was described in the Vedas.",
                 "info-link": "https://www.amazon.in/Lost-River-Michel-Danino/dp/0143068644/ref=sr_1_1?dchild=1&keywords=michel+danino+lost+river&qid=1587889606&sr=8-1",
-                "map-notes": "Divided into three streams. Part 1 till Hanumangarh (this one) has strong flow till 2500BC and decreases after"
+                "map-notes": "Divided into three streams. Part 1 till Hanumangarh (this one) has strong flow till 2500BC and decreases after. Vinashana can be assumed to be the trailing end of this"
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
+                    [
+                        76.5623,
+                        29.9965
+                    ],
                     [
                         76.3124,
                         29.9156
@@ -252,7 +253,7 @@
                 "name": "Middle Saraswati",
                 "period": ":-2600",
                 "period-key": "0004",
-                "info": "Course of ancient Saraswati river, as recreated from multiple documents, but primarily the excellent book by Michel Danino: The Lost River - On the trail of the SARASVATI. The course shows the Ghagghar joining Sarsuti near Rasulpur. This combined stream joins Chautang aka Drishdavati near Hanumangarh and flows into Pakistan beyond Anupgarh. In the past, a tributary of Sutlej (not shown) would have also met the upper arm which likely resulted in the snow-fed year round river that was described in the Vedas. TODO - update course with time",
+                "info": "Course of ancient Saraswati river, as recreated from multiple documents, but primarily the excellent book by Michel Danino: The Lost River - On the trail of the SARASVATI. During the late Harappan age (post 1900BC), this arm vanished in the desert.",
                 "info-link": "https://www.amazon.in/Lost-River-Michel-Danino/dp/0143068644/ref=sr_1_1?dchild=1&keywords=michel+danino+lost+river&qid=1587889606&sr=8-1",
                 "map-notes": "Divided into three streams. Mid section till Marot (this one) starting to thin out till 1900BC and decreases after"
             },
@@ -307,7 +308,8 @@
                 "name": "Saraswati in Cholistan channel 1",
                 "period": ":-2600",
                 "period-key": "0005",
-                "type": "river"
+                "type": "river",
+                "info": "Paleo channels of Saraswati in Cholistan. p70-75 The Lost River and its references"
             },
             "geometry": {
                 "type": "LineString",
@@ -480,7 +482,8 @@
                 "name": "Saraswati in Cholistan channel 1 loop",
                 "period": ":-2600",
                 "period-key": "0006",
-                "type": "river"
+                "type": "river",
+                "info": "Paleo channels of Saraswati in Cholistan. p70-75 The Lost River and its references"
             },
             "geometry": {
                 "type": "LineString",
@@ -509,7 +512,8 @@
                 "name": "Saraswati in Cholistan channel 2",
                 "period": ":-2600",
                 "period-key": "0007",
-                "type": "river"
+                "type": "river",
+                "info": "Paleo channels of Saraswati in Cholistan. p70-75 The Lost River and its references"
             },
             "geometry": {
                 "type": "MultiLineString",
@@ -621,7 +625,8 @@
                 "stroke-opacity": 1,
                 "name": "channel1 channel2 connector",
                 "period": ":-2400",
-                "type": "river"
+                "type": "river",
+                "info": "Paleo channels of Saraswati in Cholistan. p70-75 The Lost River and its references"
             },
             "geometry": {
                 "type": "LineString",
@@ -656,13 +661,14 @@
         {
             "type": "Feature",
             "properties": {
-                "stroke": "#555555",
+                "stroke": "#005FFF",
                 "stroke-width": 2,
                 "stroke-opacity": 1,
                 "name": "Saraswati channel 3",
                 "type": "river",
                 "period": ":-2600",
-                "period-key": "0007"
+                "period-key": "0007",
+                "info": "Minor channel of Saraswati running south of Jaisalmer"
             },
             "geometry": {
                 "type": "LineString",
@@ -803,7 +809,8 @@
                 "name": "Saraswati channel 4",
                 "type": "river",
                 "period": ":-2600",
-                "period-key": "0007"
+                "period-key": "0007",
+                "info": "Minor channel of Saraswati running close to Aravallis, corresponding to Luni's basin. There may have been a connection between Saraswati and Luni basins via Drisdavati (Hissar-Nohar stretch). p71 The Lost River"
             },
             "geometry": {
                 "type": "LineString",
@@ -932,7 +939,8 @@
                 "name": "Saraswati channel 5",
                 "type": "river",
                 "period": ":-2600",
-                "period-key": "0007"
+                "period-key": "0007",
+                "info": "Minor channel of Saraswati running close to Aravallis, corresponding to Luni's basin. There may have been a connection between Saraswati and Luni basins via Drisdavati (Hissar-Nohar stretch). p71 The Lost River"
             },
             "geometry": {
                 "type": "LineString",
@@ -1264,7 +1272,9 @@
                 "name": "Mohenjodaro",
                 "type": "site",
                 "site": "IVC",
-                "visible": true
+                "period": "-2500:-2000",
+                "visible": true,
+                "map-notes": "Dates based on wikipedia. May need update"
             },
             "geometry": {
                 "type": "Point",
@@ -1333,7 +1343,7 @@
             "type": "Feature",
             "properties": {
                 "stroke": "#05eaff",
-                "stroke-width": 2,
+                "stroke-width": 1,
                 "stroke-opacity": 1,
                 "type": "river",
                 "name": "Ghaggar",
@@ -1379,9 +1389,8 @@
                 "name-aka": "Indrapatta,Brhatsthala",
                 "persons": "Pandus,Yudhisthira,Pandavas",
                 "capital": "Kuru",
-                "period": "-1600:-400",
-                "visible": true,
-                "todo": "End date for city?"
+                "period": "-1600:",
+                "visible": true
             }
         },
         {
@@ -1680,9 +1689,10 @@
                 "kingdom": "Kuru",
                 "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n115/mode/2up",
                 "todo": "extant west till Parinah, south Khandva, north Turghana. get proper dates",
-                "period": "-1600:-400",
+                "period": ":-400",
+                "visible": true,
                 "persons": "Mandhata,Arjuna,Sudhanu,Suvahu,Hiuen Tsang",
-                "info": "Brahmavarta"
+                "info": "Brahmavarta. Mentioned in Rgveda,MB. Origin: Manu->Ila(f)->Pururava->(2more)->Nahusa->Yayati->Puru->(9more)->Samvarna->Kuru. Samvarna lost his kingdom to Pancalas, fled to a forest on bank of Indus."
             },
             "geometry": {
                 "type": "Polygon",
@@ -1826,8 +1836,25 @@
                 "capital": "Magadha",
                 "visible": true,
                 "name-aka": "Rajagriha,Rajagrha,Girivraja,Vasumati,Barhadrathapura,Magadhapura,Varaha,Vrsabha,Raigiri,Caityaka,Bimbisarapuri,Kusagarapura",
-                "period": ":-600",
-                "persons": "Bimbisara,Buddha,Ajatsatru"
+                "period": "-2000:-300",
+                "persons": "Bimbisara,Buddha,Ajatsatru,Chandragupta,Samudragupta,Skandagupta",
+                "info": "Very ancient and storied history tied to Magadha and Rajgir atleast from time of Ramayana. Jarasandha ruled at time of MB. Highly prominent during time of Buddha, Maurya dynasty. After Ajatsatru, capital shifted to Pataliputra. This city should be in history books instead of Delhi!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.42917251586914,
+                    25.010445226088965
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "event",
+                "name": "Bimbisara establishes Haryanka dynasty",
+                "visible": true,
+                "period": "-529:-528"
             },
             "geometry": {
                 "type": "Point",
@@ -1848,11 +1875,13 @@
                 "type": "kingdom",
                 "name": "Magadha",
                 "kingdom": "Magadha",
-                "period": "-600:0",
-                "persons": "Buddha,Bimbisara,Ajatasatru,Jivaka",
-                "texts": "Rgveda",
+                "period": "-2000:-666",
+                "period-key": "0009",
+                "persons": "Buddha,Bimbisara,Ajatasatru,Jivaka,Jarasandha,Chandragupta Maurya,Asoka,Bindusar,Pusyamitra Sunga,Chandragupta,Samudragupta,Skandagupta",
+                "texts": "Rgveda,Ramayana,MB,Arthasastra (Kautilya)",
                 "kingdom-aka": "Kikata",
-                "todo": "Need timeline and dynasty extent"
+                "todo": "Need timeline and dynasty extent. -2000 based on Ramayana. End with Adityasena in early 8th century",
+                "info-link": "https://archive.org/details/in.ernet.dli.2015.215048/page/n237/mode/2up"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1914,7 +1943,10 @@
                 "river": "Ganga",
                 "capital": "Magadha",
                 "persons": "Asoka",
-                "visible": true
+                "period": "-446:1000",
+                "visible": true,
+                "info": "Built in 4th year of rein of Ajatsatru's successor Udayin Bhatta",
+                "info-link": "https://archive.org/details/in.ernet.dli.2015.215048/page/n227/mode/2up"
             },
             "geometry": {
                 "type": "Point",
@@ -1935,11 +1967,11 @@
                 "type": "kingdom",
                 "name": "Anga",
                 "kingdom": "Anga",
-                "period": ":-600",
+                "period": "-600:-400",
                 "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n55/mode/2up",
                 "persons": "Anga Vairocani,Mahagovinda,Mahinda",
                 "texts": "Mahabharat,Ramayana",
-                "todo": "texts from bclaw references need addition"
+                "todo": "texts from bclaw references need addition. Fix timeline"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2004,11 +2036,12 @@
                 "type": "kingdom",
                 "name": "Kosala",
                 "kingdom": "Kosala",
-                "period": ":-600",
-                "persons": "Buddha,Pasenadi,Lava,Kusa",
-                "texts": "Panini,Astadhyayi,Mahabharata,BhagavataP",
-                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n113/mode/2up",
-                "info": "Kosalans belong to solar race and descent from Manu through Iksvaku"
+                "period": "-2000:-490",
+                "persons": "Buddha,Pasenadi,Lava,Kusa,Kusumadhanva,Brhadbala,Mandhata,Sagara,Raghu,Iksvaku,Bhagiratha,Kuvalayasva",
+                "texts": "Panini,Astadhyayi,Ramayana,Mahabharata,BhagavataP,Dasakumaracaritam,SatpathB,KalpaS",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n113/mode/2up, https://archive.org/details/in.ernet.dli.2015.215048/page/n141/mode/2up",
+                "info": "Kosalans claim to be of solar race and descent from Manu through Iksvaku. Ayodhya was in Kosala during Ramayana times. Constant rivalry between Kosala and Kasi till Ajatasatru merged with his Magadha empire",
+                "map-notes": "BC Law points out that when Rama went on exile, he pointed out the vast fertile plains of Kosala country before he reached the Ganges. Date of -2000 assuming Ramayana as endpoint. Not mentioned in Vedic literature. Asura Dhundhu, apparently a natural phenomena on west coast, was subdued by Kuvalayasva. Kosala became part of Magadha empire during Ajatsatru's reign. 490BC end date based on wiki for Ajatasatru"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2090,9 +2123,12 @@
                 "type": "kingdom",
                 "name": "Panchala",
                 "kingdom": "Panchala",
-                "texts": "Mahabharat,SatapathaB",
+                "texts": "Mahabharat,SatapathaB,Arthasastra",
                 "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n63/mode/2up",
-                "kingdom-aka": "krivis"
+                "name-aka": "krivis",
+                "period": ":1000",
+                "visible": true,
+                "info": "Mentioned in Rgveda as Krivis. Monarchical upto 5th/6th cent BC. Around 4th cent BC, became a sangha. Post Asoka, Pancala was invaded by Greeks. 840-910AD became a powerful kingdom under Bhoj and his son."
             },
             "geometry": {
                 "type": "Polygon",
@@ -2133,11 +2169,13 @@
                 "type": "kingdom",
                 "name": "Matsya",
                 "kingdom": "Matsya",
-                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up, https://archive.org/details/in.ernet.dli.2015.215048/page/n381/mode/2up",
                 "texts": "Rgveda",
-                "persons": "Virata",
+                "persons": "Virata, Abhimanyu, Uttara",
                 "period": ":-600",
-                "todo": "get proper dates"
+                "visible": true,
+                "todo": "get proper dates",
+                "map-notes": "Neighbor to Salvas. Frequently mentioned with Surasenois, Cedis, Karusa. Final merge to Magadha empire"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2208,7 +2246,7 @@
                 "type": "city",
                 "name": "Pava",
                 "name-aka": "Padrauna",
-                "period": "-600:-400",
+                "period": "-600:-490",
                 "persons": "Buddha",
                 "info": "place of Buddha's death",
                 "visible": true,
@@ -2234,9 +2272,9 @@
                 "name-aka": "Kusavati,Kasia",
                 "river": "Hiranyavati or little Gandak",
                 "visible": true,
-                "period": "-600:-400",
+                "period": "-600:-490",
                 "capital": "Malla",
-                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n115/mode/2up",
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n115/mode/2up, https://archive.org/details/in.ernet.dli.2015.215048/page/n285/mode/2up",
                 "persons": "Buddha,Asoka",
                 "texts": "Divyavadana",
                 "info": "Where Buddha passed away"
@@ -2253,8 +2291,10 @@
                 "type": "kingdom",
                 "name": "Malla",
                 "kingdom": "Malla",
+                "persons": "Buddha,Mahavir",
                 "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n63/mode/2up",
-                "period": -600
+                "period": "-600:-490",
+                "info": "Contemperorary to Lichhavis and Buddha. Subsumed into Magadha empire by Ajatasatru. Jainism was popular among Mallas"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2295,11 +2335,12 @@
                 "type": "kingdom",
                 "name": "Cedi",
                 "kingdom": "Cedi",
-                "todo": "need better location",
-                "persons": "Buddha",
-                "period": ":-600",
-                "texts": "Mahabharat",
-                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n63/mode/2up"
+                "persons": "Buddha,Kasu the Caidya,Uparicara Vasu,Satyavati,Sisupala,Karnadeva,Gangeyadeva",
+                "period": ":1000",
+                "texts": "Mahabharat,Rgveda",
+                "visible": true,
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n63/mode/2up",
+                "info": "Mentioned in Vedas.Vasu was progenitor of Kauravas and Pandavas"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2346,13 +2387,13 @@
                 "name": "Kosambi",
                 "name-aka": "Kausambi",
                 "capital": "Vamsa",
-                "persons": "Buddha,Udena,Vasabhadatta,Vaisravana,Hiuen Tsang,Pradyota",
+                "persons": "Buddha,Udena (Udayana),Vasabhadatta,Vaisravana,Hiuen Tsang,Pradyota,Sunga,Yasahpala,Nicaksu",
                 "visible": true,
-                "period": "-600:700",
-                "texts": "Patanjali,Mahabhasya",
+                "period": "-600:1036",
+                "texts": "Patanjali,Mahabhasya,Svapnavasavadatta (Bhasa),PratijnaYaugandharayana (Bhasa), Ratnavali (Harsa), Priyadarsika (Harsa)",
                 "todo": "long history prior to Buddha as per wikipedia going back to Vedic age",
                 "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n113/mode/2up",
-                "info": "Vamsa dynasty traced descent from Puru. On great trade route connecting Sravasti with Paithana"
+                "info": "Vamsa dynasty traced descent from Puru. On great trade route connecting Sravasti with Paithana. Tales of Udayana abound in Sanskrit literature"
             }
         },
         {
@@ -2369,7 +2410,10 @@
                 "kingdom-aka": "Vatsa",
                 "info-link": "pg49, BCLaw-Historical geography of ancient India",
                 "todo": "need exact coordinates",
-                "period": ":-600"
+                "period": ":-323",
+                "visible": true,
+                "texts": "Rgveda,Svapnavasavadatta (Bhasa),PratijnaYaugandharayana (Bhasa), Ratnavali (Harsa), Priyadarsika (Harsa)",
+                "info": "Avanti,Kosala,and Vamsa were independent till a century after Buddha's death. Later part of Mauryan empire. This state was buffer between Magadha & Avanti and Kosala & Avanti"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2422,11 +2466,12 @@
                 "capital": "Surasena",
                 "visible": true,
                 "river": "Yamuna",
-                "persons": "Krishna,Kamsa,Satrugna,Surasena,Buddha,Mahakaccayana,Upagupta,Vasavadatta,Gunaprabha",
-                "period-key": "0100",
+                "persons": "Krishna,Kamsa,Satrugna,Surasena,Buddha,Mahakaccayana,Upagupta,Vasavadatta,Gunaprabha,Fa Hien, Hiuen Tsang,Megasthenes",
+                "period-key": "-1500:0100",
                 "todo": "need dates, need boundaries of Surasena",
                 "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n121/mode/2up",
-                "texts": "Panini,Astadhyayi,Patanjali,Mahabhasya,Megasthenes"
+                "texts": "Panini,Astadhyayi,Patanjali,Mahabhasya",
+                "info": "Known from Megasthenes' time (300BC) as a place of Krsna worship"
             }
         },
         {
@@ -2441,9 +2486,12 @@
                 "name": "Surasena",
                 "kingdom": "Surasena",
                 "kingdom-aka": "Surasenoi",
+                "persons": "Yadu,Fa Hien,Hiuen Tsang,Krishna,Kamsa",
                 "period": ":-100",
                 "todo": "find dates",
-                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up"
+                "visible": true,
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up",
+                "info": "Not mentioned in Vedas, but considered to have very high position in Vedic age, second only to inhabitants of Brahmavarta. Claim descent from Yadu."
             },
             "geometry": {
                 "type": "Polygon",
@@ -2510,10 +2558,12 @@
                 "type": "kingdom",
                 "name": "Avanti",
                 "kingdom": "Avanti",
-                "todo": "need better coordinates",
+                "name-aka": "Malawa",
                 "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up",
-                "period": ":-600",
-                "persons": "Pajjota,Vasabhadatta,Udena"
+                "period": "-1500:1400",
+                "persons": "Pajjota,Vasabhadatta,Udena,Vinda,Anuvinda,Panini,Bhoj,Munja",
+                "texts": "Periplus of the Erythrean sea",
+                "info": "Not mentione3d in Vedas. Fought with Kauravas in MB war. City of Ujjain said to be well connected to Surparaka (Sopara) and Brgukaccha (Bharuch) for trade. In Buddha's time king of Mathura was called Avantiputta, showing links to royal family of Ujain. Called Avanti at till 2nd cent AD, later known as Malwa. Bhoj ruled for 40 years in about 1018AD"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2561,8 +2611,8 @@
                 "capital": "Avanti",
                 "visible": true,
                 "todo": "need better location,time",
-                "persons": "Pajjota",
-                "period": ":-600",
+                "persons": "Pajjota,Asoka,Accutagami,Huen Tsang,Kalidasa",
+                "period": "-600:",
                 "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n65/mode/2up"
             }
         },
@@ -2621,10 +2671,11 @@
                 "name": "Kamboja",
                 "name-aka": "Kambujiya",
                 "kingdom": "Kamboja",
-                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n67/mode/2up",
-                "todo": "need more info",
-                "texts": "Astadhyayi,Panini,Mahabhasya,Patanjali,BhagavataP",
-                "period": ":-600"
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n67/mode/2up, https://archive.org/details/in.ernet.dli.2015.215048/page/n31/mode/2up",
+                "texts": "Astadhyayi,Panini,Mahabhasya,Patanjali,BhagavataP,Samaveda,MB,Nirukta (Yaska),Raghuvamsa (Kalidasa)",
+                "period": ":1000",
+                "info": "Supposed to have lost original Brahmanical customs and become barbarous. In 10th century they defeated Pala kings of Bengal",
+                "todo": "Gap between Asoka and 9th century AD for Kamboja history"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2648,25 +2699,6 @@
                         ]
                     ]
                 ]
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    82.063199,
-                    27.54074
-                ]
-            },
-            "properties": {
-                "marker-color": "#7e7e7e",
-                "marker-size": "medium",
-                "marker-symbol": "",
-                "river": "Achiravati",
-                "name-aka": "Rapti,Airavati,Ajiravati",
-                "persons": "Buddha,Vidudabha,Pasenadi,Sariputta,Ananthapindika",
-                "todo": "remove this?"
             }
         },
         {
@@ -2876,7 +2908,7 @@
                 "type": "city",
                 "name": "Ayodhya",
                 "name-aka": "Vinita,Sogeda,Saketa,Iksvakubhumi,Ramapuri",
-                "period": ":400",
+                "period": "-2000:",
                 "persons": "Rama,Pusyamitra Sunga,Vasubandhu,Dasaratha,Haihayas,Fa-Hien,Ptolemy,Yuan Chwang,Vasubandhu",
                 "texts": "Ramayana,Mahabharat,BhagavatP,SkandaP",
                 "info": "Saketa was an important Kosala city, one of the six great cities of ancient India in the time preceding Buddha. On route to Sravasti and Kosambi.",
@@ -2902,7 +2934,8 @@
                 "kingdom": "Audumbara",
                 "texts": "Astadhyayi,Panini",
                 "todo": "get details from BC Law papers",
-                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n81/mode/2up"
+                "info-link": "https://archive.org/details/in.gov.ignca.2348/page/n81/mode/2up",
+                "visible": false
             },
             "geometry": {
                 "type": "Point",

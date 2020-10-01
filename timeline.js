@@ -8,32 +8,39 @@ td = {
                     "period": "-2600:-2500",
                     "properties": {
                         "strokeWeight" : 4,
-                        "stokeOpacity": 0.75
+                        "stokeOpacity": 0.8
                     }
                 },
                 {
                     "period": "-2500:-2400",
                     "properties": {
                         "strokeWeight" : 3,
-                        "stokeOpacity": 0.6
+                        "stokeOpacity": 0.7
                     }
                 },
                 {
                     "period": "-2400:-2200",
                     "properties": {
                         "strokeWeight" : 2,
-                        "strokeOpacity": 0.45
+                        "strokeOpacity": 0.6
                     }
                 },
                 {
                     "period": "-2200:-1900",
                     "properties": {
                         "strokeWeight" : 1,
-                        "strokeOpacity": 0.3
+                        "strokeOpacity": 0.5
                     }
                 },
                 {
-                    "period": "-1900:-1700",
+                    "period": "-1900:-1500",
+                    "properties": {
+                        "strokeWeight" : 1,
+                        "strokeOpacity": 0.5
+                    }
+                },
+                {
+                    "period": "-1500:-1400",
                     "coordinates": [
                         [
                             76.3124,
@@ -298,19 +305,22 @@ td = {
                 {
                     "period": "-2600:-2400",
                     "properties": {
-                        "strokeWeight": 3
+                        "strokeWeight": 3,
+                        "strokeOpacity" : 0.8
                     }
                 },
                 {
                     "period": "-2400:-2200",
                     "properties": {
-                        "strokeWeight": 2
+                        "strokeWeight": 2,
+                        "strokeOpacity" : 0.7
                     }
                 },
                 {
                     "period": "-2200:-2000",
                     "properties": {
-                        "strokeWeight": 1
+                        "strokeWeight": 1,
+                        "strokeOpacity" : 0.6
                     }
                 },
                 {
@@ -344,8 +354,58 @@ td = {
                     "properties": {
                         "strokeOpacity" : 0.5
                     }
+                },
+                {
+                    "period": "-1900:-1800",
+                    "coordinates": [
+                        [
+                            74.2875,
+                            29.6209
+                        ],
+                        [
+                            73.9012,
+                            29.3226
+                        ],
+                        [
+                            73.6627,
+                            29.335
+                        ],
+                        [
+                            73.362,
+                            29.1627
+                        ]
+                    ]
+                },
+                {
+                    "period": "-1800:-1700",
+                    "coordinates": [
+                        [
+                            74.2875,
+                            29.6209
+                        ],
+                        [
+                            73.9012,
+                            29.3226
+                        ],
+                        [
+                            73.6627,
+                            29.335
+                        ]
+                    ]
+                },
+                {
+                    "period": "-1700:-1600",
+                    "coordinates": [
+                        [
+                            74.2875,
+                            29.6209
+                        ],
+                        [
+                            73.9012,
+                            29.3226
+                        ]
+                    ]
                 }
-
             ]
         },
         {
@@ -420,8 +480,39 @@ td = {
                 {
                     "period": "-2200:-1900",
                     "properties": {
-                        "strokeWeight": 1,
+                        "strokeOpacity": 0.9
+                    }
+                }
+                ,
+                {
+                    "period": "-1900:-1800",
+                    "properties": {
+                        "strokeOpacity": 0.8
+                    }
+                }
+                ,
+                {
+                    "period": "-1800:-1700",
+                    "properties": {
+                        "strokeOpacity": 0.7
+                    }
+                },
+                {
+                    "period": "-1700:-1600",
+                    "properties": {
+                        "strokeOpacity": 0.6
+                    }
+                },
+                {
+                    "period": "-1600:-1500",
+                    "properties": {
                         "strokeOpacity": 0.5
+                    }
+                },
+                {
+                    "period": "-1500:-1400",
+                    "properties": {
+                        "strokeOpacity": 0.25
                     }
                 }                
             ]
@@ -450,6 +541,203 @@ td = {
                         "strokeOpacity": 0.3
                     }
                 }                
+            ]
+        },
+        {
+            "place_key": "0009",
+            "timeline": [
+                {
+                    "period": "-666:-528",
+                    "properties": {
+                        "persons": "Pradyota dynasty",
+                    }
+                },
+                {
+                    "period": "-528:-476",
+                    "coordinates":[
+                        [
+                            82.90283203125,
+                            25.403584973186703
+                        ],
+                        [
+                            84.012451171875,
+                            24.477150011148677
+                        ],
+                        [
+                            86.693115234375,
+                            24.37712083961039
+                        ],
+                        [
+                            87.176513671875,
+                            24.657002173279082
+                        ],
+                        [
+                            87.38525390624999,
+                            25.15522939494057
+                        ],
+                        [
+                            87.2314453125,
+                            25.572175556682115
+                        ],
+                        [
+                            86.385498046875,
+                            25.77021384896025
+                        ],
+                        [
+                            84.78149414062499,
+                            25.750424835909385
+                        ],
+                        [
+                            82.90283203125,
+                            25.403584973186703
+                        ]
+                    ],
+                    "properties": {
+                        "persons": "Bimbisara"
+                    }
+                },
+                {
+                    "period": "-476:-450",
+                    "coordinates": [
+                        [
+                          82.90283203125,
+                          25.403584973186703
+                        ],
+                        [
+                          84.012451171875,
+                          24.477150011148677
+                        ],
+                        [
+                          86.693115234375,
+                          24.37712083961039
+                        ],
+                        [
+                          87.176513671875,
+                          24.657002173279082
+                        ],
+                        [
+                          87.38525390624999,
+                          25.15522939494057
+                        ],
+                        [
+                          87.2314453125,
+                          25.572175556682115
+                        ],
+                        [
+                          86.396484375,
+                          25.913585416189797
+                        ],
+                        [
+                          84.869384765625,
+                          26.288490072961164
+                        ],
+                        [
+                          82.90283203125,
+                          25.403584973186703
+                        ]
+                    ],
+                    "properties": {
+                        "persons": "Ajatsatru",
+                        // Buddha died 8 years into his reign,
+                        "fill": "#555555",
+                        "fill-opacity": 0.5
+                    }
+                },
+                {
+                    "period": "-450:-434",
+                    "properties": {
+                        "persons": "Udayi Bhadda",
+                        // Pataliputra established 4yrs into his reign
+                        "fill": "#555555",
+                        "fill-opacity": 0.5
+                    }
+                    
+                },
+                {
+                    "period": "-434:-421",
+                    "properties": {
+                        "persons": "last remnants of Haryanka dynasty",
+                        // Pataliputra established 4yrs into his reign
+                        "fill": "#555555",
+                        "fill-opacity": 0.5
+                    }
+                    
+                },
+                {
+                    "period": "-421:-345",
+                    "properties": {
+                        "persons": "Sisunaga dynasty",
+                        // period taken from wikipedia. Wiki says Avanti was conquered but not present in BC Law book
+                        "fill": "#555555",
+                        "fill-opacity": 0.5
+                    }
+                },
+                {
+                    "period": "-345:-324",
+                    "coordinates": [
+                        [
+                          82.06787109374999,
+                          27.839076094777816
+                        ],
+                        [
+                          80.74951171875,
+                          27.21555620902969
+                        ],
+                        [
+                          79.530029296875,
+                          25.21488107113259
+                        ],
+                        [
+                          74.542236328125,
+                          23.200960808078566
+                        ],
+                        [
+                          74.81689453125,
+                          21.983801417384697
+                        ],
+                        [
+                          79.7607421875,
+                          22.52270570348246
+                        ],
+                        [
+                          84.18823242187499,
+                          23.83560098662095
+                        ],
+                        [
+                          86.693115234375,
+                          24.37712083961039
+                        ],
+                        [
+                          87.176513671875,
+                          24.657002173279082
+                        ],
+                        [
+                          87.38525390624999,
+                          25.15522939494057
+                        ],
+                        [
+                          87.2314453125,
+                          25.572175556682115
+                        ],
+                        [
+                          86.396484375,
+                          25.913585416189797
+                        ],
+                        [
+                          84.869384765625,
+                          26.288490072961164
+                        ],
+                        [
+                          82.06787109374999,
+                          27.839076094777816
+                        ]
+                    ],
+                    "properties": {
+                        "persons": "Nanda dynasty",
+                        "fill": "#555555",
+                        "fill-opacity": 0.5
+                    }
+                }
             ]
         },
         {

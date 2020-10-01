@@ -1,10 +1,11 @@
 var defined_periods = {
-    Ramayan : "-2100:-2000", 
+    Ramayana : "-2000:-1900", 
     Mahabharata : "-1500:-1400",
     Buddha : "-500:-400", 
     Alexander : "-350:-325", 
     Mauryan : "-323:-250",
-    Default: "-5000:2100"
+    Default: "-5000:2100",
+    None: null
 }
 
 function parse_period(period){
