@@ -1,3 +1,17 @@
+// TODO list
+// principles - default_geo and default_property means they are retrieved using feature.getGeometry and feature.getProperties
+// if a feature has time wise changes in geo or props, for each interval retrieve them from array. Return default if either is null
+// timeline.js should have full geometry objects, not line coordinates
+// load these geometry objects using a dummy data instance in setupchronoextent
+// factor out the function to setStyle method. This function is called each time a property is updated
+// when running a time step, if we determine feature falls into this period - check visibility first. 
+// if object doesnt have a period-key, just use default geo and props. Dont touch object so setstyle is not called
+// if object has a period key either geo/props will change. If geo is nonnull call setGeometry. If props is non-null
+// update properties. Touching properties will cause setStyle to get called
+// keep events as separate entities even if they share coordinates with locations
+
+
+
 var filter_mappings = {
     pname: ['persons'],
     lname: ['texts'],
@@ -207,6 +221,95 @@ function clear_filter() {
     map.data.revertStyle();
 }
 
+function style_feature(feature) {
+    var pointType = feature.getProperty('type');
+    var pointTitle = feature.getProperty('name');
+    var visibility = feature.getProperty('visible');
+
+    if (visibility === undefined || visibility === null || visibility === false) {
+        return ({ icon: {}, visible: false });
+    }
+
+    if (feature.getGeometry().getType() === "Point") {
+        if (pointTitle !== undefined && pointTitle !== null) {
+            if (pointType === 'city') {
+                return ({
+                    title: pointTitle,
+                    icon: 'city.png'
+                });
+            }
+            else if (pointType === 'place') {
+                return /** @type {!google.maps.Data.StyleOptions} */({
+                    title: pointTitle,
+                    icon: 'place.png'
+                });
+            }
+            else if (pointType === 'site') {
+                return /** @type {!google.maps.Data.StyleOptions} */({
+                    title: pointTitle,
+                    icon: 'site.png'
+                });
+            }
+            else if (pointType === 'kingdom') {
+                return ({
+                    title: pointTitle,
+                    // kingdoms dont have an icon
+                    icon: 'city.png'
+                });
+            }
+            else {
+                // for example event type. Only create faded popup, no markers
+                return ({ icon: {}, visible: false });
+            }
+        }
+        else {
+            return ({ icon: {}, visible: false })
+        }
+    }
+    else if (feature.getGeometry().getType() === "LineString"
+        || feature.getGeometry().getType() === "MultiLineString") {
+        var riverName = feature.getProperty('name');
+        var river_type = feature.getProperty('type');
+        if (river_type !== undefined && river_type !== null && river_type === 'river') {
+            var strokeWeight = 2;
+            var strokeColor = 'blue';
+            var strokeOpacity = 1;
+            var sw = feature.getProperty('stroke-width');
+            var sc = feature.getProperty('stroke');
+            var so = feature.getProperty('stroke-opacity');
+            if (sw !== undefined && sw !== null) {
+                strokeWeight = parseInt(sw);
+            }
+            if (sc !== undefined && sc !== null) {
+                strokeColor = sc;
+            }
+            if (so != undefined && so !== null) {
+                strokeOpacity = parseFloat(so);
+            }
+            return ({
+                strokeColor: sc,
+                strokeWeight: strokeWeight,
+                strokeOpacity: so
+            })
+        }
+    }
+    else if (feature.getGeometry().getType() === "Polygon") {
+        var poly_type = feature.getProperty('type');
+        if (poly_type !== undefined && poly_type !== null) {
+            if (poly_type === 'forest') {
+                return ({ fillColor: 'green' });
+            }
+            else if (poly_type === 'kingdom') {
+                var fc = feature.getProperty('fill');
+                var fo = feature.getProperty('fill-opacity');
+                if (fc !== undefined && fc !== null && fo !== undefined && fo !== null) {
+                    return ({ fillColor: fc, fillOpacity: parseFloat(fo) })
+                }
+            }
+        }
+    }
+}
+
 function get_feature_data_for_interval(feature, timestep_start, timestep_end) {
     var name = feature.getProperty('name')
     var chrono_geo = feature.getProperty(CHRONO_GEO);
@@ -241,7 +344,7 @@ function get_feature_data_for_interval(feature, timestep_start, timestep_end) {
     return null;
 }
 
-var global_start = -1000;
+var global_start = -3000;
 var global_end = -500;
 var delta = 1;
 
@@ -372,6 +475,7 @@ function initMap() {
     Popup = createPopupClass();
     FadingPopup = createFadingPopupClass();
     setup_listeners();
+    map.data.setStyle(style_feature);
 
     // setup map as at beginning
     setTimeout(function () { run_timestep(); }, 1000);
@@ -389,95 +493,6 @@ function initMap() {
         map.data.addListener('click', click_handler);
         map.addListener('zoom_changed', zoom_handler);
     }
-
-    map.data.setStyle(function (feature) {
-        var pointType = feature.getProperty('type');
-        var pointTitle = feature.getProperty('name');
-        var visibility = feature.getProperty('visible');
-
-        if (visibility === undefined || visibility === null || visibility === false) {
-            return ({ icon: {}, visible: false });
-        }
-
-        if (feature.getGeometry().getType() === "Point") {
-            if (pointTitle !== undefined && pointTitle !== null) {
-                if (pointType === 'city') {
-                    return ({
-                        title: pointTitle,
-                        icon: 'city.png'
-                    });
-                }
-                else if (pointType === 'place') {
-                    return /** @type {!google.maps.Data.StyleOptions} */({
-                        title: pointTitle,
-                        icon: 'place.png'
-                    });
-                }
-                else if (pointType === 'site') {
-                    return /** @type {!google.maps.Data.StyleOptions} */({
-                        title: pointTitle,
-                        icon: 'site.png'
-                    });
-                }
-                else if (pointType === 'kingdom') {
-                    return ({
-                        title: pointTitle,
-                        // kingdoms dont have an icon
-                        icon: 'city.png'
-                    });
-                }
-                else {
-                    // for example event type. Only create faded popup, no markers
-                    return ({ icon: {}, visible: false });
-                }
-            }
-            else {
-                return ({ icon: {}, visible: false })
-            }
-        }
-        else if (feature.getGeometry().getType() === "LineString"
-            || feature.getGeometry().getType() === "MultiLineString") {
-            var riverName = feature.getProperty('name');
-            var river_type = feature.getProperty('type');
-            if (river_type !== undefined && river_type !== null && river_type === 'river') {
-                var strokeWeight = 2;
-                var strokeColor = 'blue';
-                var strokeOpacity = 1;
-                var sw = feature.getProperty('stroke-width');
-                var sc = feature.getProperty('stroke');
-                var so = feature.getProperty('stroke-opacity');
-                if (sw !== undefined && sw !== null) {
-                    strokeWeight = parseInt(sw);
-                }
-                if (sc !== undefined && sc !== null) {
-                    strokeColor = sc;
-                }
-                if (so != undefined && so !== null) {
-                    strokeOpacity = parseFloat(so);
-                }
-                return ({
-                    strokeColor: sc,
-                    strokeWeight: strokeWeight,
-                    strokeOpacity: so
-                })
-            }
-        }
-        else if (feature.getGeometry().getType() === "Polygon") {
-            var poly_type = feature.getProperty('type');
-            if (poly_type !== undefined && poly_type !== null) {
-                if (poly_type === 'forest') {
-                    return ({ fillColor: 'green' });
-                }
-                else if (poly_type === 'kingdom'){
-                    var fc = feature.getProperty('fill');
-                    var fo = feature.getProperty('fill-opacity');
-                    if (fc !== undefined && fc !== null && fo !== undefined && fo !== null){
-                        return ({ fillColor: fc, fillOpacity: parseFloat(fo)})
-                    }
-                }
-            }
-        }
-    });
 
     function set_polygon_names(features) {
         for (i = 0; i < features.length; i++) {
@@ -527,23 +542,26 @@ function initMap() {
                 // find range,geometry and range,properties for this feature and add to dictionary 
                 td.elements.forEach(function (x) {
                     if (x['place_key'] === period_key) {
-                        x.timeline.forEach(function (rcp) {
-                            var period = rcp.period;
+                        var fc = new google.maps.Data();
+                        var fs = fc.addGeoJson(x.timeline);
+                        for (i = 0; i < fs.length; i++) {
+                            var period = fs[i].getProperty('period');
                             geometry[period] = DEFAULT_GEO;
-                            if (rcp.coordinates !== undefined && rcp.coordinates !== null) {
-                                var latlngs = []
-                                rcp.coordinates.forEach(function (c) {
-                                    var ll = new google.maps.LatLng(c[1], c[0]);
-                                    latlngs.push(ll);
-                                })
-                                geometry[period] = new google.maps.Data.LineString(latlngs);
+                            geo = fs[i].getGeometry();
+                            if (geo !== undefined && geo !== null) {
+                                geometry[period] = geo;
                             }
                             // copy properties if present
                             properties[period] = DEFAULT_PROP;
-                            if (rcp.properties !== undefined && rcp.properties !== null) {
-                                properties[period] = rcp.properties;
+                            var propList = {};
+                            fs[i].forEachProperty(function (value, key) {
+                                propList[key] = value;
+                            })
+                            // only new props are added to collection. These props must be merged with existing before applying style
+                            if (propList.length > 0) {
+                                properties[period] = propList;
                             }
-                        })
+                        }
                     }
                 })
             }
